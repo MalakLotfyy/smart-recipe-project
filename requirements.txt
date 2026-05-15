@@ -1,6 +1,6 @@
 # Model 1 — Vision
 ultralytics>=8.0.0        # YOLOv8
-opencv-python>=4.8.0      # image processing
+opencv-python-headless>=4.8.0 # Server-safe image processing
 Pillow>=10.0.0            # image handling
 torch>=2.0.0              # deep learning backend
 torchvision>=0.15.0
@@ -12,13 +12,15 @@ pandas>=2.0.0
 
 # LLM Agent
 langchain>=0.1.0
-langchain-google-genai>=0.0.6   # Gemini (free API)
+langchain-google-genai>=0.0.6   
 google-generativeai>=0.3.0
 requests>=2.31.0                # Nutrition API calls
+pydantic>=2.0.0                 # Data validation for Gemini JSON
 
-# App UI
+# App UI & Audio
 streamlit>=1.30.0
-plotly>=5.18.0            # charts for nutrition info
+plotly>=5.18.0                  # charts for nutrition info
+gTTS>=2.4.0                     # Google Text-to-Speech
 
 # Utilities
-python-dotenv>=1.0.0      # for storing API keys safely
+python-dotenv>=1.0.0            # for storing API keys safely
