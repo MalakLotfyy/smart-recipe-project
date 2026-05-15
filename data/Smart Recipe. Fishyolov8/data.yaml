@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['bream-fish']
+
+roboflow:
+  workspace: kenzy-tarek-elsayed
+  project: kenzy-tarek-elsayed
+  version: dataset
+  license: Private
+  url: https://app.roboflow.com/kenzy-tarek-elsayed/kenzy-tarek-elsayed/dataset

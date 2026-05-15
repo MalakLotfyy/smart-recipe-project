@@ -1,0 +1,47 @@
+# ──────────────────────────────────────────────
+# dataset.yaml  ← YOLOv8 dataset configuration
+# ──────────────────────────────────────────────
+# HOW TO USE:
+#   1. Put your images in data/my_dataset/images/train/ and /val/
+#   2. Put your label .txt files in data/my_dataset/labels/train/ and /val/
+#   3. Update the 'names' list below to match YOUR classes
+#   4. Run train_yolo.py
+# ──────────────────────────────────────────────
+
+path: ../data/my_dataset   # root of your dataset (relative to this file)
+train: images/train        # training images folder
+val: images/val            # validation images folder
+
+# Number of classes — update this to match how many items you have
+nc: 20
+
+# Class names — ADD OR REMOVE items to match your dataset
+# These must match exactly what you used when labeling
+names:
+  - egg
+  - yogurt
+  - milk
+  - cheese
+  - butter
+  - tomato
+  - onion
+  - garlic
+  - pepper
+  - cucumber
+  - carrot
+  - lemon
+  - potato
+  - chicken
+  - ground_beef
+  - rice
+  - pasta
+  - olive_oil
+  - bread
+  - lettuce
+
+# ──────────────────────────────────────────────
+# TEAM NOTE:
+# When you download a dataset from Roboflow,
+# it comes with its own data.yaml — just replace
+# this file's content with that one.
+# ──────────────────────────────────────────────

@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 12
+names: ['apple', 'cabbage', 'capsicum', 'carrots', 'cauliflower', 'chillies', 'cucumber', 'garlic', 'ginger', 'lemon', 'potato', 'tomato']
+
+roboflow:
+  workspace: kenzy-tarek-elsayed
+  project: kenzy-tarek-elsayed
+  version: dataset
+  license: Private
+  url: https://app.roboflow.com/kenzy-tarek-elsayed/kenzy-tarek-elsayed/dataset

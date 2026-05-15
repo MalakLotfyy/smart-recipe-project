@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 10
+names: ['bread', 'butter', 'carrots', 'chillies', 'cucumber', 'egg', 'garlic', 'ginger', 'lemon', 'tomato']
+
+roboflow:
+  workspace: kenzy-tarek-elsayed
+  project: kenzy-tarek-elsayed
+  version: dataset
+  license: Private
+  url: https://app.roboflow.com/kenzy-tarek-elsayed/kenzy-tarek-elsayed/dataset

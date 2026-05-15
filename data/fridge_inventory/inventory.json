@@ -1,0 +1,68 @@
+{
+  "beef": {
+    "name": "beef",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-12 22:17"
+  },
+  "bread": {
+    "name": "bread",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-12 22:17"
+  },
+  "butter": {
+    "name": "butter",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-12 22:17"
+  },
+  "carrots": {
+    "name": "carrots",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-12 22:17"
+  },
+  "cabbage": {
+    "name": "cabbage",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-12 22:17"
+  },
+  "chicken": {
+    "name": "chicken",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-12 22:17"
+  },
+  "chillies": {
+    "name": "chillies",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-12 22:17"
+  },
+  "egg": {
+    "name": "egg",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-12 22:17"
+  },
+  "Egg": {
+    "name": "Egg",
+    "count": 1,
+    "confidence": 0.9,
+    "last_seen": "2026-05-15 23:37"
+  },
+  "Milk": {
+    "name": "Milk",
+    "count": 1,
+    "confidence": 0.82,
+    "last_seen": "2026-05-15 23:33"
+  },
+  "Pasta": {
+    "name": "Pasta",
+    "count": 1,
+    "confidence": 0.77,
+    "last_seen": "2026-05-15 23:35"
+  }
+}

@@ -1,0 +1,605 @@
+[
+    {
+        "id": 1,
+        "name": "Shakshuka",
+        "cuisine": "Egyptian/Middle Eastern",
+        "ingredients": [
+            "egg",
+            "tomato",
+            "onion",
+            "pepper",
+            "garlic",
+            "olive_oil"
+        ],
+        "required": [
+            "egg",
+            "tomato"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "breakfast",
+            "quick"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 20,
+        "description": "Eggs poached in a spiced tomato and pepper sauce.",
+        "steps": [
+            "Heat olive oil in a pan over medium heat.",
+            "Saut\u00c3\u00a9 onion and garlic until soft.",
+            "Add chopped tomatoes and peppers. Season with cumin and paprika.",
+            "Simmer for 10 minutes until sauce thickens.",
+            "Make small wells and crack eggs into them.",
+            "Cover and cook until eggs are just set. Serve with bread."
+        ],
+        "allergens": []
+    },
+    {
+        "id": 2,
+        "name": "Greek omelette",
+        "cuisine": "Mediterranean",
+        "ingredients": [
+            "egg",
+            "cheese",
+            "tomato",
+            "onion",
+            "olive_oil"
+        ],
+        "required": [
+            "egg"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "breakfast",
+            "quick"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 15,
+        "description": "Fluffy omelette filled with cheese and vegetables.",
+        "steps": [
+            "Beat 3 eggs with a pinch of salt.",
+            "Heat olive oil in a non-stick pan.",
+            "Pour in eggs and let them set slightly.",
+            "Add cheese, diced tomato, and onion on one half.",
+            "Fold and slide onto a plate."
+        ],
+        "allergens": [
+            "eggs",
+            "dairy"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Tomato cucumber salad",
+        "cuisine": "Egyptian",
+        "ingredients": [
+            "tomato",
+            "cucumber",
+            "onion",
+            "lemon",
+            "olive_oil"
+        ],
+        "required": [
+            "tomato",
+            "cucumber"
+        ],
+        "tags": [
+            "vegetarian",
+            "vegan",
+            "halal",
+            "side",
+            "no-cook"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 10,
+        "description": "Classic Egyptian salad with lemon dressing.",
+        "steps": [
+            "Dice tomatoes and cucumbers into small cubes.",
+            "Thinly slice the onion.",
+            "Mix together with olive oil, lemon juice, salt, and pepper.",
+            "Serve fresh."
+        ],
+        "allergens": []
+    },
+    {
+        "id": 4,
+        "name": "Pasta with tomato sauce",
+        "cuisine": "Italian",
+        "ingredients": [
+            "pasta",
+            "tomato",
+            "garlic",
+            "onion",
+            "olive_oil"
+        ],
+        "required": [
+            "pasta",
+            "tomato"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "dinner"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 25,
+        "description": "Classic pasta in a simple garlic tomato sauce.",
+        "steps": [
+            "Boil pasta according to package instructions.",
+            "Saut\u00c3\u00a9 garlic and onion in olive oil.",
+            "Add crushed tomatoes and simmer for 15 minutes.",
+            "Season with salt, pepper, and basil.",
+            "Toss with drained pasta."
+        ],
+        "allergens": [
+            "gluten"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Chicken and rice",
+        "cuisine": "Egyptian",
+        "ingredients": [
+            "chicken",
+            "rice",
+            "onion",
+            "garlic",
+            "olive_oil",
+            "carrot"
+        ],
+        "required": [
+            "chicken",
+            "rice"
+        ],
+        "tags": [
+            "halal",
+            "dinner",
+            "high-protein"
+        ],
+        "difficulty": "medium",
+        "time_minutes": 50,
+        "description": "Egyptian-style chicken with spiced rice.",
+        "steps": [
+            "Brown chicken pieces in olive oil with onion and garlic.",
+            "Add water and simmer for 30 minutes.",
+            "Remove chicken. Cook rice in the chicken broth.",
+            "Return chicken on top of rice, garnish with fried onions."
+        ],
+        "allergens": []
+    },
+    {
+        "id": 6,
+        "name": "Carrot yogurt salad",
+        "cuisine": "Egyptian",
+        "ingredients": [
+            "carrot",
+            "yogurt",
+            "garlic",
+            "lemon"
+        ],
+        "required": [
+            "carrot",
+            "yogurt"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "side"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 10,
+        "description": "Grated carrots in garlic yogurt dressing.",
+        "steps": [
+            "Grate carrots.",
+            "Mix yogurt with minced garlic, lemon juice, salt.",
+            "Combine with carrots and serve chilled."
+        ],
+        "allergens": [
+            "dairy"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Ground beef stuffed peppers",
+        "cuisine": "Mediterranean",
+        "ingredients": [
+            "ground_beef",
+            "pepper",
+            "tomato",
+            "onion",
+            "garlic",
+            "rice"
+        ],
+        "required": [
+            "ground_beef",
+            "pepper"
+        ],
+        "tags": [
+            "halal",
+            "dinner"
+        ],
+        "difficulty": "medium",
+        "time_minutes": 45,
+        "description": "Peppers filled with spiced beef and rice.",
+        "steps": [
+            "Cut tops off peppers and remove seeds.",
+            "Brown ground beef with onion, garlic, and spices.",
+            "Mix in partially cooked rice and tomato.",
+            "Stuff peppers and bake at 180\u00c2\u00b0C for 30 minutes."
+        ],
+        "allergens": []
+    },
+    {
+        "id": 8,
+        "name": "Cheese toast",
+        "cuisine": "Universal",
+        "ingredients": [
+            "bread",
+            "cheese",
+            "butter",
+            "tomato"
+        ],
+        "required": [
+            "bread",
+            "cheese"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "breakfast",
+            "quick"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 5,
+        "description": "Quick cheesy toast, great for breakfast.",
+        "steps": [
+            "Butter the bread slices.",
+            "Top with cheese and sliced tomato.",
+            "Toast under a grill until cheese melts."
+        ],
+        "allergens": [
+            "gluten",
+            "dairy"
+        ]
+    },
+    {
+        "name": "Quick Ginger Tofu & Broccoli Noodles",
+        "cuisine": "Asian",
+        "ingredients": [
+            "tofu",
+            "soy sauce",
+            "broccoli",
+            "ginger",
+            "noodles",
+            "vegetable oil",
+            "garlic",
+            "salt",
+            "pepper",
+            "water"
+        ],
+        "required": [
+            "tofu",
+            "soy sauce",
+            "broccoli",
+            "ginger",
+            "noodles"
+        ],
+        "tags": [
+            "vegan",
+            "quick",
+            "dinner",
+            "stir-fry",
+            "asian"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 25,
+        "description": "A super quick and flavorful vegan stir-fry featuring crispy tofu, tender-crisp broccoli, and a fragrant ginger-garlic soy sauce, all tossed with your favorite noodles. Perfect for a busy weeknight meal.",
+        "steps": [
+            "Press extra-firm tofu for 10-15 minutes to remove excess water, then cut into 1-inch cubes.",
+            "Cook noodles according to package directions. Drain and set aside.",
+            "Chop broccoli into bite-sized florets. Mince fresh ginger and garlic.",
+            "Heat 1 tablespoon of vegetable oil in a large pan or wok over medium-high heat. Add tofu cubes and cook until golden brown and crispy on all sides, about 5-7 minutes. Remove tofu from the pan and set aside.",
+            "Add another tablespoon of vegetable oil to the pan. Add broccoli florets and stir-fry for 3-4 minutes until tender-crisp. Add minced ginger and garlic and cook for another minute until fragrant.",
+            "Return the cooked tofu to the pan. Add the cooked noodles and pour in the soy sauce. Toss everything together until well combined and heated through.",
+            "Season with salt and pepper to taste. Serve immediately."
+        ],
+        "allergens": [
+            "soy",
+            "gluten"
+        ],
+        "id": 9
+    },
+    {
+        "name": "Caramelized Onion, Banana, and Kiwi Yogurt Parfait",
+        "cuisine": "Fusion",
+        "ingredients": [
+            "banana",
+            "kiwi",
+            "yogurt",
+            "onion",
+            "sugar",
+            "oil",
+            "salt"
+        ],
+        "required": [
+            "banana",
+            "kiwi",
+            "yogurt",
+            "onion"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "breakfast",
+            "snack",
+            "dessert",
+            "fusion",
+            "unique"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 40,
+        "description": "An unexpectedly delicious and adventurous parfait featuring creamy yogurt, sweet banana, tangy kiwi, and a surprising element of savory-sweet caramelized onions. This recipe transforms simple ingredients into a unique culinary experience, balancing contrasting flavors for a truly memorable dish.",
+        "steps": [
+            "Peel and thinly slice the onion.",
+            "In a small pan, heat a teaspoon of oil over medium-low heat. Add the sliced onion and a pinch of salt. Cook slowly, stirring occasionally, for 25-30 minutes until the onions are deeply golden brown and very soft. Towards the end, stir in a teaspoon of sugar to enhance caramelization and sweetness. Remove from heat and let cool completely.",
+            "While the onions are caramelizing, peel and slice the banana and kiwi into desired shapes.",
+            "In a serving glass or bowl, layer a portion of yogurt, followed by sliced banana and kiwi. Repeat the layers until the glass is full.",
+            "Once the caramelized onions have cooled, spoon them generously over the top of the parfait.",
+            "Serve immediately and enjoy this unique flavor combination."
+        ],
+        "allergens": [
+            "dairy"
+        ],
+        "id": 10
+    },
+    {
+        "name": "Savory Banana & Kiwi Fritters with Caramelized Onion",
+        "cuisine": "Fusion",
+        "ingredients": [
+            "banana",
+            "kiwi",
+            "onion",
+            "all-purpose flour",
+            "vegetable oil",
+            "salt",
+            "black pepper"
+        ],
+        "required": [
+            "banana",
+            "kiwi",
+            "onion"
+        ],
+        "tags": [
+            "vegetarian",
+            "quick",
+            "snack",
+            "inventive",
+            "dairy-free"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 35,
+        "description": "An unexpectedly delightful fusion of sweet and savory, these pan-fried fritters combine ripe bananas and tangy kiwi with a hint of savory seasoning. Topped with sweet, slow-cooked caramelized onions, this dish offers a unique flavor profile perfect for an adventurous palate. This recipe expertly utilizes limited ingredients to create a surprisingly cohesive and delicious meal.",
+        "steps": [
+            "Peel and mash the banana in a medium bowl until mostly smooth. There should still be some small lumps for texture.",
+            "Peel and finely dice the kiwi. Add to the mashed banana.",
+            "Add 2 tablespoons of all-purpose flour, a pinch of salt, and a dash of black pepper to the banana-kiwi mixture. Mix gently until just combined. The mixture should be thick enough to form small patties. If too wet, add a tiny bit more flour, one teaspoon at a time.",
+            "Peel and thinly slice the onion.",
+            "Heat 1 tablespoon of vegetable oil in a small non-stick pan over medium-low heat. Add the sliced onions and a pinch of salt. Cook slowly, stirring occasionally, for 15-20 minutes until the onions are soft, translucent, and deeply golden brown. Set aside.",
+            "Heat 2 tablespoons of vegetable oil in a large non-stick pan over medium heat.",
+            "Spoon small amounts (about 1.5-2 tablespoons) of the banana-kiwi mixture into the hot pan, flattening slightly with the back of the spoon to form small fritters (about 2-3 inches in diameter). Do not overcrowd the pan; cook in batches if necessary.",
+            "Cook for 3-4 minutes per side, or until golden brown and cooked through. The fritters should be firm to the touch.",
+            "Remove fritters from the pan and place on a plate lined with paper towels to drain any excess oil.",
+            "Serve the warm fritters immediately, topped generously with the caramelized onions."
+        ],
+        "allergens": [
+            "gluten"
+        ],
+        "id": 11
+    },
+    {
+        "name": "Spicy Tuna and Okra Stir-fry with Fresh Peach Salsa",
+        "cuisine": "Fusion",
+        "ingredients": [
+            "tuna (canned)",
+            "lady finger",
+            "peach",
+            "sugar apple",
+            "onion",
+            "garlic",
+            "ginger",
+            "green chili",
+            "cooking oil",
+            "salt",
+            "black pepper",
+            "turmeric powder",
+            "cumin powder",
+            "coriander powder",
+            "lemon juice"
+        ],
+        "required": [
+            "tuna",
+            "lady finger",
+            "peach",
+            "sugar apple"
+        ],
+        "tags": [
+            "halal",
+            "dinner",
+            "quick",
+            "fish",
+            "spicy",
+            "stir-fry"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 40,
+        "description": "A quick and flavorful stir-fry featuring tender okra and flaky tuna, enhanced with aromatic spices. Served alongside a vibrant, refreshing peach salsa to balance the savory notes. The sweet sugar apple provides a delightful, refreshing finish to the meal.",
+        "steps": [
+            "Wash and pat dry the lady fingers (okra). Trim the ends and slice them into 1/2-inch rounds.",
+            "Finely chop the onion, mince the garlic, grate the ginger, and slice the green chili (adjust to taste).",
+            "Heat 1 tablespoon of cooking oil in a pan or wok over medium-high heat. Add the sliced okra and stir-fry for 5-7 minutes until it's slightly tender and loses its sliminess. Remove from pan and set aside.",
+            "In the same pan, add another tablespoon of oil if needed. Add chopped onion and saut\u00e9 until translucent, about 3-4 minutes. Add minced garlic, grated ginger, and green chili. Saut\u00e9 for another 1-2 minutes until fragrant.",
+            "Reduce heat to medium. Add turmeric powder, cumin powder, and coriander powder. Saut\u00e9 for 30 seconds, stirring constantly, to toast the spices.",
+            "Drain the canned tuna (if in oil, you can use a bit of the oil for cooking, otherwise use water-packed). Add the tuna to the pan, breaking it up gently with a spoon. Stir to combine with the spices and aromatics.",
+            "Add the saut\u00e9ed okra back into the pan. Stir everything together gently. Season with salt and black pepper to taste. Cook for another 3-5 minutes, allowing flavors to meld.",
+            "While the stir-fry is cooking, dice the peach into small cubes. In a small bowl, combine the diced peach with a squeeze of lemon juice and a tiny pinch of salt.",
+            "Serve the Spicy Tuna and Okra Stir-fry hot, with the fresh peach salsa on the side.",
+            "Peel and deseed the sugar apple. Serve the segments chilled as a refreshing palate cleanser after the meal."
+        ],
+        "allergens": [
+            "fish"
+        ],
+        "id": 12
+    },
+    {
+        "name": "Spicy Beef and Cabbage Stir-fry with Toasted Buttered Bread",
+        "cuisine": "Asian-inspired",
+        "ingredients": [
+            "beef",
+            "cabbage",
+            "carrots",
+            "chillies",
+            "bread",
+            "butter",
+            "egg",
+            "cooking oil",
+            "salt",
+            "black pepper"
+        ],
+        "required": [
+            "beef",
+            "cabbage",
+            "carrots",
+            "chillies",
+            "bread"
+        ],
+        "tags": [
+            "halal",
+            "dinner",
+            "quick",
+            "spicy",
+            "stir-fry",
+            "comfort food"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 35,
+        "description": "A vibrant and spicy stir-fry featuring tender beef, crunchy cabbage, and sweet carrots, elevated with fresh chillies. Served with warm, buttered toast and an optional fried egg for a complete and satisfying meal.",
+        "steps": [
+            "Thinly slice the beef against the grain into bite-sized strips.",
+            "Shred the cabbage and julienne the carrots. Finely chop the chillies.",
+            "Heat a tablespoon of cooking oil in a large pan or wok over medium-high heat. Add the beef and stir-fry until browned and cooked through. Season with salt and black pepper. Remove the beef from the pan and set aside.",
+            "Add the carrots to the same pan and stir-fry for 2-3 minutes until slightly tender.",
+            "Add the shredded cabbage and chopped chillies to the pan. Continue to stir-fry for 4-6 minutes, until the cabbage is tender-crisp.",
+            "Return the cooked beef to the pan with the vegetables. Toss everything together and cook for another 2 minutes to heat through. Taste and adjust seasoning if needed.",
+            "While the stir-fry is cooking, toast the slices of bread. Spread butter generously on the warm toast.",
+            "In a separate small pan, fry the egg(s) to your desired doneness (optional).",
+            "Serve the spicy beef and cabbage stir-fry immediately with the buttered toast and optional fried egg(s) on the side."
+        ],
+        "allergens": [
+            "gluten",
+            "dairy",
+            "egg"
+        ],
+        "id": 13
+    },
+    {
+        "name": "Spicy Chicken and Vegetable Pasta Stir-fry",
+        "cuisine": "Asian-inspired",
+        "ingredients": [
+            "chicken",
+            "pasta",
+            "carrots",
+            "cabbage",
+            "chillies",
+            "egg",
+            "vegetable oil",
+            "salt",
+            "black pepper",
+            "soy sauce"
+        ],
+        "required": [
+            "chicken",
+            "pasta",
+            "carrots",
+            "cabbage",
+            "chillies",
+            "egg"
+        ],
+        "tags": [
+            "halal",
+            "dairy-free",
+            "dinner",
+            "quick",
+            "spicy"
+        ],
+        "difficulty": "medium",
+        "time_minutes": 50,
+        "description": "A vibrant and spicy chicken and vegetable pasta stir-fry, perfect for a quick, flavorful, and dairy-free meal. It combines tender chicken and crisp vegetables with pasta, all tossed in a savory and spicy sauce.",
+        "steps": [
+            "Cook the pasta according to package directions. Drain and set aside, reserving about 1/4 cup of pasta water if desired.",
+            "While pasta cooks, slice the chicken breast into thin strips. Julienne the carrots and thinly slice the cabbage and chillies.",
+            "Heat a large wok or frying pan over medium-high heat. Add a tablespoon of vegetable oil. Add the chicken strips and stir-fry until cooked through and lightly browned, about 5-7 minutes. Season lightly with salt and black pepper. Remove chicken from the pan and set aside.",
+            "Add another splash of vegetable oil to the pan if needed. Add the julienned carrots and stir-fry for 2-3 minutes. Then add the sliced cabbage and chillies and continue to stir-fry for another 3-4 minutes until vegetables are tender-crisp.",
+            "Push the vegetables to one side of the pan. Crack the egg into the empty space and scramble until just set. Break it into smaller pieces and mix with the vegetables.",
+            "Return the cooked chicken to the pan. Add the cooked pasta and soy sauce. Toss everything together to combine, ensuring the pasta is well coated. If the dish seems too dry, add a tablespoon or two of the reserved pasta water.",
+            "Taste and adjust seasoning if necessary with additional salt, pepper, or soy sauce. Serve hot."
+        ],
+        "allergens": [
+            "egg",
+            "wheat",
+            "soy"
+        ],
+        "id": 14
+    },
+    {
+        "name": "Halal Chicken and Vegetable Stir-fry with Pasta",
+        "cuisine": "Asian",
+        "ingredients": [
+            "chicken breast (halal)",
+            "pasta",
+            "carrots",
+            "cabbage",
+            "red chillies (optional)",
+            "cooking oil",
+            "soy sauce",
+            "garlic cloves",
+            "ginger",
+            "salt",
+            "black pepper",
+            "water"
+        ],
+        "required": [
+            "chicken",
+            "pasta",
+            "carrots",
+            "cabbage"
+        ],
+        "tags": [
+            "halal",
+            "dinner",
+            "quick",
+            "dairy-free",
+            "main course"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 40,
+        "description": "A vibrant and savory Halal Chicken and Vegetable Stir-fry, featuring tender chicken strips, crisp carrots, and crunchy cabbage, all tossed in a light soy-ginger sauce and served over perfectly cooked pasta. This dairy-free recipe is quick to prepare and packed with flavor, making it an ideal weeknight dinner.",
+        "steps": [
+            "Cook pasta according to package directions. Drain and set aside.",
+            "While pasta cooks, slice chicken breast into thin strips. Mince garlic and ginger. Julienne carrots and thinly slice cabbage. Finely chop chillies if using.",
+            "Heat cooking oil in a large wok or frying pan over medium-high heat. Add chicken strips and stir-fry until cooked through and lightly browned, about 5-7 minutes. Remove chicken from the pan and set aside.",
+            "Add a little more oil if needed, then add minced garlic and ginger to the pan. Saut\u00e9 for 30 seconds until fragrant.",
+            "Add julienned carrots and chopped chillies (if using) to the pan. Stir-fry for 2-3 minutes until slightly tender-crisp.",
+            "Add sliced cabbage to the pan and continue to stir-fry for another 2-3 minutes until it starts to soften but still retains some crunch.",
+            "Return the cooked chicken to the pan with the vegetables. Pour in soy sauce, season with salt and black pepper to taste. Toss everything together to coat evenly.",
+            "Add the drained pasta to the wok with the chicken and vegetables. Toss gently to combine all ingredients and heat through for 1-2 minutes.",
+            "Serve hot."
+        ],
+        "allergens": [
+            "wheat",
+            "soy",
+            "chicken"
+        ],
+        "id": 15
+    }
+]
