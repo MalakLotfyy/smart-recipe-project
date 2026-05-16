@@ -1,68 +1,140 @@
 {
-  "beef": {
-    "name": "beef",
+  "milk": {
+    "name": "milk",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-12 22:17"
+    "last_seen": "2026-05-16 17:15"
   },
-  "bread": {
-    "name": "bread",
+  "pasta": {
+    "name": "pasta",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-12 22:17"
+    "last_seen": "2026-05-16 17:15"
+  },
+  "avocado": {
+    "name": "avocado",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
   },
   "butter": {
     "name": "butter",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-12 22:17"
+    "last_seen": "2026-05-16 17:15"
   },
   "carrots": {
     "name": "carrots",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-12 22:17"
-  },
-  "cabbage": {
-    "name": "cabbage",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-12 22:17"
-  },
-  "chicken": {
-    "name": "chicken",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-12 22:17"
-  },
-  "chillies": {
-    "name": "chillies",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-12 22:17"
+    "last_seen": "2026-05-16 17:15"
   },
   "egg": {
     "name": "egg",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-12 22:17"
+    "last_seen": "2026-05-16 17:15"
   },
-  "Egg": {
-    "name": "Egg",
+  "kiwi": {
+    "name": "kiwi",
     "count": 1,
-    "confidence": 0.9,
-    "last_seen": "2026-05-15 23:37"
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
   },
-  "Milk": {
-    "name": "Milk",
+  "lemon": {
+    "name": "lemon",
     "count": 1,
-    "confidence": 0.82,
-    "last_seen": "2026-05-15 23:33"
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
   },
-  "Pasta": {
-    "name": "Pasta",
+  "lettuce": {
+    "name": "lettuce",
     "count": 1,
-    "confidence": 0.77,
-    "last_seen": "2026-05-15 23:35"
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "oil": {
+    "name": "oil",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "onion": {
+    "name": "onion",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "tomato puree": {
+    "name": "tomato puree",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "salt": {
+    "name": "salt",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "black pepper": {
+    "name": "black pepper",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "garlic powder": {
+    "name": "garlic powder",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "onion powder": {
+    "name": "onion powder",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "cumin": {
+    "name": "cumin",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "paprika": {
+    "name": "paprika",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "cinnamon": {
+    "name": "cinnamon",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "turmeric": {
+    "name": "turmeric",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "sugar": {
+    "name": "sugar",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "soy sauce": {
+    "name": "soy sauce",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
+  },
+  "olive oil": {
+    "name": "olive oil",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-16 17:15"
   }
 }

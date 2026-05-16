@@ -29,7 +29,12 @@ ALL_CLASSES = [
     "Lemon", "Lentils", "Lettuce", "Mango", "Milk", "Mozzarella", "Oil", "Onion", 
     "Orange", "Oren", "Pasta", "Peach", "Pear", "Pineapple", "Potato", "Rice", 
     "Spaghetti", "Sponge Gourd", "Strawberry", "Sugar Apple", "Tomato", "Tomato Puree", 
-    "Tuna", "Watermelon"
+    "Tuna", "Watermelon","Water", "Salt", "Black Pepper",
+    "Garlic Powder", "Onion Powder",
+    "Cumin", "Paprika",
+    "Cinnamon", "Turmeric",
+    "Vinegar", "Sugar",
+    "Soy Sauce", "Butter", "Olive Oil",
 ]
 
 # ── AUDIO LOGIC ──

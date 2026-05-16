@@ -28,8 +28,11 @@ class RecipeRecommender:
         # Refresh recipes in case a new one was added to the JSON
         self.recipes = get_all_recipes()
         self._fit()
+
+        #lazem kolo lowercasse
+        available_lower = [i.lower() for i in available_ingredients]
         
-        fridge_doc = " ".join(available_ingredients)
+        fridge_doc = " ".join(available_lower)
         try:
             fridge_vector = self.vectorizer.transform([fridge_doc])
             similarities = cosine_similarity(fridge_vector, self.recipe_matrix).flatten()
@@ -40,7 +43,10 @@ class RecipeRecommender:
         for i, recipe in enumerate(self.recipes):
             score = float(similarities[i])
 
-            has_required = all(req in available_ingredients for req in recipe.get("required", []))
+            has_required = all(
+                req.lower() in available_lower 
+                for req in recipe.get("required", [])
+            )
             if not has_required:
                 continue 
 
@@ -62,7 +68,7 @@ class RecipeRecommender:
             if cuisine_pref and recipe["cuisine"] not in cuisine_pref:
                 continue
 
-            missing = [ing for ing in recipe["ingredients"] if ing not in available_ingredients]
+            missing = [ing for ing in recipe["ingredients"] if ing.lower() not in available_lower]
 
             scored.append({
                 **recipe,

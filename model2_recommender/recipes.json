@@ -601,5 +601,94 @@
             "chicken"
         ],
         "id": 15
+    },
+    {
+        "name": "Simple Creamy Milk Pasta",
+        "cuisine": "Comfort Food",
+        "ingredients": [
+            "pasta",
+            "milk",
+            "water",
+            "salt",
+            "black pepper",
+            "olive oil"
+        ],
+        "required": [
+            "pasta",
+            "milk"
+        ],
+        "tags": [
+            "halal",
+            "vegetarian",
+            "quick",
+            "easy",
+            "dinner",
+            "comfort food"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 25,
+        "description": "A comforting and incredibly simple pasta dish, perfect when you have minimal ingredients. This recipe creates a light, creamy sauce using just milk, pasta, and a few pantry staples, making it a quick and satisfying meal.",
+        "steps": [
+            "Bring a pot of salted water to a boil. Add the pasta and cook according to package directions until al dente.",
+            "While the pasta is cooking, gently heat the milk in a separate saucepan over medium-low heat. Do not boil.",
+            "Once the pasta is cooked, drain it, reserving about 1/2 cup of the pasta water.",
+            "Add the drained pasta directly to the saucepan with the warm milk. Stir gently to combine.",
+            "If the sauce seems too thick, add a splash of the reserved pasta water until it reaches your desired consistency.",
+            "Season generously with salt and black pepper to taste. A drizzle of olive oil can be added for extra flavor.",
+            "Serve immediately and enjoy your simple, creamy pasta."
+        ],
+        "allergens": [
+            "milk",
+            "gluten"
+        ],
+        "id": 16
+    },
+    {
+        "name": "Creamy Halal Chicken Pasta",
+        "cuisine": "Italian-American",
+        "ingredients": [
+            "halal chicken breast",
+            "pasta",
+            "cooking cream",
+            "milk",
+            "all-purpose flour",
+            "olive oil",
+            "salt",
+            "black pepper",
+            "garlic powder",
+            "onion powder"
+        ],
+        "required": [
+            "chicken",
+            "pasta",
+            "cooking cream",
+            "milk",
+            "flour"
+        ],
+        "tags": [
+            "halal",
+            "dinner",
+            "quick",
+            "creamy",
+            "chicken"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 40,
+        "description": "A simple yet delicious creamy pasta dish featuring tender halal chicken pieces coated in a rich, velvety sauce. Perfect for a quick weeknight meal using basic fridge and pantry staples.",
+        "steps": [
+            "Cook the pasta according to package directions in salted water until al dente. Drain and set aside.",
+            "While the pasta cooks, cut the halal chicken breast into bite-sized pieces. Season with salt, black pepper, garlic powder, and onion powder.",
+            "Heat olive oil in a large skillet or pot over medium-high heat. Add the seasoned chicken pieces and cook until golden brown and cooked through, about 5-7 minutes. Remove chicken from the skillet and set aside.",
+            "In the same skillet, reduce heat to medium. Add the all-purpose flour and whisk continuously for 1 minute to create a roux.",
+            "Gradually pour in the milk and cooking cream, whisking constantly to prevent lumps. Continue to whisk until the sauce thickens and comes to a gentle simmer, about 5-7 minutes.",
+            "Season the sauce with additional salt and pepper to taste.",
+            "Return the cooked chicken to the skillet with the sauce. Add the drained pasta and toss gently to coat everything evenly.",
+            "Serve immediately and enjoy your creamy halal chicken pasta."
+        ],
+        "allergens": [
+            "milk",
+            "gluten"
+        ],
+        "id": 17
     }
 ]
