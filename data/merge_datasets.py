@@ -116,12 +116,7 @@ DATASETS = [
         "prefix": "ds6",
     },
 
-    # 7. fruits and veg 2.yolov8
-    {
-        "path": "data/fruits and veg 2.yolov8",
-        "class_map": {0: 4, 1: 7, 2: 9, 3: 10, 4: 11, 5: 13, 6: 14, 7: 23, 8: 24, 9: 25, 10: 27, 11: 28, 12: 36, 13: 43, 14: 46, 15: 49, 16: 0, 17: 1, 18: 2, 19: 19, 20: 20, 21: 21, 22: 26, 23: 32, 24: 37, 25: 38, 26: 40, 27: 41, 28: 42, 29: 47, 30: 48, 31: 52},
-        "prefix": "ds7",
-    },
+#remove 7. Food Ingredients Detection Tomato.yolov8
 
     # 8. Fruits.yolov8
     {
