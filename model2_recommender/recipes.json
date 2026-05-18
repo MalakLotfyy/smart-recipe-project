@@ -690,5 +690,49 @@
             "gluten"
         ],
         "id": 17
+    },
+    {
+        "name": "Creamy Beef Strips with Egg",
+        "cuisine": "Comfort Food",
+        "ingredients": [
+            "beef",
+            "cooking cream",
+            "egg",
+            "salt",
+            "black pepper",
+            "vegetable oil",
+            "water"
+        ],
+        "required": [
+            "beef",
+            "cooking cream",
+            "egg",
+            "salt",
+            "black pepper"
+        ],
+        "tags": [
+            "halal",
+            "dinner",
+            "quick",
+            "creamy"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 35,
+        "description": "A simple yet satisfying dish featuring tender beef strips simmered in a rich, creamy sauce, enriched with an egg for extra body and flavor. Perfect for a quick and comforting meal.",
+        "steps": [
+            "Slice the beef into thin strips, about 1/4 inch thick and 2 inches long. Season generously with salt and black pepper.",
+            "Heat 1 tablespoon of vegetable oil in a large skillet or pan over medium-high heat. Add the beef strips and sear for 3-5 minutes until browned on all sides. Do not overcrowd the pan; cook in batches if necessary.",
+            "Once all beef is seared, return it to the pan. Reduce heat to medium-low.",
+            "Pour in the cooking cream. Bring to a gentle simmer, stirring occasionally. Add a splash of water if the sauce is too thick.",
+            "In a small bowl, whisk the egg until well combined. Gradually temper the egg by slowly drizzling about 2 tablespoons of the hot cream sauce into the whisked egg while stirring constantly.",
+            "Slowly pour the tempered egg mixture into the simmering beef and cream, stirring continuously for 1-2 minutes until the sauce slightly thickens. Do not boil vigorously after adding the egg to prevent scrambling.",
+            "Taste and adjust seasoning with more salt and black pepper if needed.",
+            "Serve immediately while hot."
+        ],
+        "allergens": [
+            "milk",
+            "egg"
+        ],
+        "id": 18
     }
 ]

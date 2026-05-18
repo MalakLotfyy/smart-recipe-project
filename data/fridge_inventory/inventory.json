@@ -1,80 +1,50 @@
 {
-  "apple": {
-    "name": "apple",
+  "beef": {
+    "name": "beef",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "chicken": {
-    "name": "chicken",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "pasta": {
-    "name": "pasta",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "carrots": {
-    "name": "carrots",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "cabbage": {
-    "name": "cabbage",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "oil": {
-    "name": "oil",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "soy sauce": {
-    "name": "soy sauce",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "garlic": {
-    "name": "garlic",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "ginger": {
-    "name": "ginger",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "sugar": {
-    "name": "sugar",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
-  },
-  "salt": {
-    "name": "salt",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
+    "last_seen": "2026-05-18 23:41"
   },
   "black pepper": {
     "name": "black pepper",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
+    "last_seen": "2026-05-18 23:41"
   },
-  "garlic powder": {
-    "name": "garlic powder",
+  "cooking cream": {
+    "name": "cooking cream",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-16 17:40"
+    "last_seen": "2026-05-18 23:41"
+  },
+  "egg": {
+    "name": "egg",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-18 23:41"
+  },
+  "salt": {
+    "name": "salt",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-18 23:41"
+  },
+  "water": {
+    "name": "water",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-18 23:41"
+  },
+  "Potato": {
+    "name": "Potato",
+    "count": 1,
+    "confidence": 0.86,
+    "last_seen": "2026-05-19 00:42"
+  },
+  "Pear": {
+    "name": "Pear",
+    "count": 1,
+    "confidence": 0.73,
+    "last_seen": "2026-05-19 00:42"
   }
 }

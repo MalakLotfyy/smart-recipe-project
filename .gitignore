@@ -1,1 +1,6 @@
 .env
+# Ignore heavy YOLO image datasets
+data/merged_dataset/
+data/*yolov8*/
+runs/
+recipe_runs/

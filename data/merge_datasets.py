@@ -4,68 +4,52 @@
 # AI assistance: Anthropic Claude — logic and remapping: team's own work
 
 import os
+import random
 import shutil
 
 # ══════════════════════════════════════════════
 # EDIT THIS SECTION ONLY
 # ══════════════════════════════════════════════
 
-# Your final master class list — decide this yourself
 # Order matters — this determines the class numbers YOLO learns
 MASTER_CLASSES = [
-   "Apple",           # 0
-    "Avocado",         # 1
-    "Banana",          # 2
-    "Beef",            # 3
-    "Bitter Melon",    # 4
-    "Bread",           # 5
-    "Bream-Fish",      # 6
-    "Brinjal",         # 7
-    "Butter",          # 8
-    "Cabbage",         # 9
-    "Calabash",        # 10
-    "Capsicum",        # 11
-    "Carrots",         # 12
-    "Cauliflower",     # 13
-    "Cherry",          # 14
-    "Chicken",         # 15
-    "Chillies",        # 16
-    "Cooking Cream",   # 17
-    "Corn",            # 18
-    "Cucumber",        # 19
-    "Dragon Fruit",    # 20
-    "Egg",             # 21
-    "Flour",           # 22
-    "Garlic",          # 23
-    "Ginger",          # 24
-    "Green Chili",     # 25
-    "Guava",           # 26
-    "Kiwi",            # 27
-    "Lady Finger",     # 28
-    "Lemon",           # 29
-    "Lentils",         # 30
-    "Lettuce",         # 31
-    "Mango",           # 32
-    "Milk",            # 33
-    "Mozzarella",      # 34
-    "Oil",             # 35
-    "Onion",           # 36
-    "Orange",          # 37
-    "Oren",            # 38
-    "Pasta",           # 39
-    "Peach",           # 40
-    "Pear",            # 41
-    "Pineapple",       # 42
-    "Potato",          # 43
-    "Rice",            # 44
-    "Spaghetti",       # 45
-    "Sponge Gourd",    # 46
-    "Strawberry",      # 47
-    "Sugar Apple",     # 48
-    "Tomato",          # 49
-    "Tomato Puree",    # 50
-    "Tuna",            # 51
-    "Watermelon"       # 52
+    "Apple",           # 0
+    "Banana",          # 1
+    "Beef",            # 2
+    "Bread",           # 3
+    "Bream-Fish",      # 4
+    "Butter",          # 5
+    "Cabbage",         # 6
+    "Capsicum",        # 7
+    "Carrots",         # 8
+    "Cauliflower",     # 9
+    "Chicken",         # 10
+    "Chillies",        # 11
+    "Cooking Cream",   # 12
+    "Corn",            # 13
+    "Cucumber",        # 14
+    "Egg",             # 15
+    "Flour",           # 16
+    "Garlic",          # 17
+    "Ginger",          # 18
+    "Kiwi",            # 19
+    "Lemon",           # 20
+    "Lentils",         # 21
+    "Lettuce",         # 22
+    "Milk",            # 23
+    "Mozzarella",      # 24
+    "Oil",             # 25
+    "Onion",           # 26
+    "Orange",          # 27
+    "Pasta",           # 28
+    "Pear",            # 29
+    "Potato",          # 30
+    "Rice",            # 31
+    "Spaghetti",       # 32
+    "Strawberry",      # 33
+    "Tomato",          # 34
+    "Tomato Puree",    # 35
+    "Tuna"             # 36
 ]
 
 # List your datasets here
@@ -77,63 +61,76 @@ DATASETS = [
     # 1. Ingredient Detection 3.yolov8
     {
         "path": "data/Ingredient Detection 3.yolov8",
-        "class_map": {0: 5, 1: 8, 2: 12, 3: 16, 4: 19, 5: 21, 6: 23, 7: 24, 8: 29, 9: 49},
+        "class_map": {0: 3, 1: 5, 2: 8, 3: 11, 4: 14, 5: 15, 6: 17, 7: 18, 8: 20, 9: 34},
         "prefix": "ds1",
     },
 
     # 2. Ingredient Detection.yolov8
     {
         "path": "data/Ingredient Detection.yolov8",
-        "class_map": {0: 0, 1: 9, 2: 11, 3: 12, 4: 13, 5: 16, 6: 19, 7: 23, 8: 24, 9: 29, 10: 43, 11: 49},
+        "class_map": {0: 0, 1: 6, 2: 7, 3: 8, 4: 9, 5: 11, 6: 14, 7: 17, 8: 18, 9: 20, 10: 30, 11: 34},
         "prefix": "ds2",
     },
 
     # 3. Ingredient Detection 2.yolov8
     {
         "path": "data/Ingredient Detection 2.yolov8",
-        "class_map": {0: 11, 1: 12, 2: 19, 3: 23, 4: 24, 5: 31, 6: 36, 7: 43, 8: 49},
+        "class_map": {0: 7, 1: 8, 2: 14, 3: 17, 4: 18, 5: 22, 6: 26, 7: 30, 8: 34},
         "prefix": "ds3",
     },
 
     # 4. Smart Recipe. Fishyolov8
     {
         "path": "data/Smart Recipe. Fishyolov8",
-        "class_map": {0: 6},
+        "class_map": {0: 4},
         "prefix": "ds4",
     },
 
     # 5. Food Ingredients Detection Beef.yolov8
     {
         "path": "data/Food Ingredients Detection Beef.yolov8",
-        "class_map": {0: 3},
+        "class_map": {0: 2},
         "prefix": "ds5",
     },
 
     # 6. Food Ingredients Detection Chicken.yolov8
     {
         "path": "data/Food Ingredients Detection Chicken.yolov8",
-        "class_map": {0: 15},
+        "class_map": {0: 10},
         "prefix": "ds6",
     },
-
-#remove 7. Food Ingredients Detection Tomato.yolov8
 
     # 8. Fruits.yolov8
     {
         "path": "data/Fruits.yolov8",
-        "class_map": {0: 0, 1: 2, 2: 27, 3: 37, 4: 41},
+        "class_map": {0: 0, 1: 1, 2: 19, 3: 27, 4: 29},
         "prefix": "ds8",
     },
     
     # 9. local supermarket.yolov8
     {
         "path": "data/local supermarket.yolov8",
-        "class_map": {0: 17, 1: 18, 2: 22, 3: 30, 4: 33, 5: 34, 6: 35, 7: 39, 8: 44, 9: 45, 10: 50, 11: 51},
+        "class_map": {0: 12, 1: 13, 2: 16, 3: 21, 4: 23, 5: 24, 6: 25, 7: 28, 8: 31, 9: 32, 10: 35, 11: 36},
         "prefix": "ds9",
     },
+
+    # 10. AI - Recipe Generator_Dataset_1.yolov8
+    {
+        "path": "data/AI - Recipe Generator_Dataset_1.yolov8",
+        # Maps both Red Onion(1) and Yellow Onion(3) to the master Onion class(26)
+        "class_map": {0: 30, 1: 26, 2: 34, 3: 26},
+        "prefix": "ds10",
+    },
+
+    # 11. AI - Recipe Generator_Dataset_2.yolov8
+    {
+        "path": "data/AI - Recipe Generator_Dataset_2.yolov8",
+        "class_map": {0: 0, 1: 1, 2: 15, 3: 27, 4: 33},
+        "prefix": "ds11",
+    }
 ]
 
-# Where to save the merged dataset
+#where to save the dataset after merging and remapping
 OUTPUT_DIR = "data/merged_dataset"
 
 # ══════════════════════════════════════════════
@@ -227,23 +224,59 @@ names:
     print(f"\nYAML saved: {yaml_path}")
 
 
+import random
+
 if __name__ == "__main__":
     print("Merging datasets...\n")
-
-    # Validate paths before starting
-    for ds in DATASETS:
-        if not os.path.exists(ds["path"]):
-            print(f"ERROR: path not found: {ds['path']}")
-            print("Fix the path in DATASETS list and run again.")
-            exit(1)
+    
+    # Cleanup old merged dataset if it exists so we start completely fresh
+    if os.path.exists(OUTPUT_DIR):
+        print("Cleaning up old merged dataset...")
+        shutil.rmtree(OUTPUT_DIR)
 
     total = 0
-    for split in ["train", "valid", "test"]:
+    # We will only pull from the train folders of your datasets
+    for split in ["train"]: 
         print(f"Processing {split}...")
         total += process_split(split)
 
-    write_yaml(total)
+    # --- NEW AUTO-SPLIT LOGIC ---
+    train_images_dir = os.path.join(OUTPUT_DIR, "train", "images")
+    train_labels_dir = os.path.join(OUTPUT_DIR, "train", "labels")
+    valid_images_dir = os.path.join(OUTPUT_DIR, "valid", "images")
+    valid_labels_dir = os.path.join(OUTPUT_DIR, "valid", "labels")
 
-    print(f"\nDone. {total} total images merged into: {OUTPUT_DIR}")
+    os.makedirs(valid_images_dir, exist_ok=True)
+    os.makedirs(valid_labels_dir, exist_ok=True)
+
+    # Grab all the images we just merged into the train folder
+    all_train_images = [f for f in os.listdir(train_images_dir) if f.endswith((".jpg", ".jpeg", ".png"))]
+
+    print("\nNo validation folders found. Auto-splitting 15% of training data for validation...")
+    
+    # Shuffle them so the AI gets a random mix of all ingredients on the test
+    random.seed(42) 
+    random.shuffle(all_train_images)
+    
+    # Calculate 15% of the total images
+    split_idx = int(len(all_train_images) * 0.15)
+    val_images_to_move = all_train_images[:split_idx]
+
+    # Move the images and their matching text files to the valid folder
+    for img in val_images_to_move:
+        shutil.move(os.path.join(train_images_dir, img), os.path.join(valid_images_dir, img))
+        
+        stem = os.path.splitext(img)[0]
+        lbl_file = stem + ".txt"
+        if os.path.exists(os.path.join(train_labels_dir, lbl_file)):
+            shutil.move(os.path.join(train_labels_dir, lbl_file), os.path.join(valid_labels_dir, lbl_file))
+
+    print(f"Moved {len(val_images_to_move)} images to the validation set.")
+    # ---------------------------
+
+    write_yaml(total)
+    print(f"\nDone. {total} total images processed.")
+    print(f"Train set: {len(all_train_images) - len(val_images_to_move)} images")
+    print(f"Valid set: {len(val_images_to_move)} images")
     print(f"Classes: {len(MASTER_CLASSES)}")
     print("\nNext: run train_yolo.py pointing to the new dataset.yaml")

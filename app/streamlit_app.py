@@ -22,20 +22,23 @@ from model2_recommender.llm_agent import run_recipe_agent
 
 # UPDATE THIS to match your MASTER_CLASSES
 ALL_CLASSES = [
-    "Apple", "Avocado", "Banana", "Beef", "Bitter Melon", "Bread", "Bream-Fish", 
-    "Brinjal", "Butter", "Cabbage", "Calabash", "Capsicum", "Carrots", "Cauliflower", 
-    "Cherry", "Chicken", "Chillies", "Cooking Cream", "Corn", "Cucumber", "Dragon Fruit", 
-    "Egg", "Flour", "Garlic", "Ginger", "Green Chili", "Guava", "Kiwi", "Lady Finger", 
-    "Lemon", "Lentils", "Lettuce", "Mango", "Milk", "Mozzarella", "Oil", "Onion", 
-    "Orange", "Oren", "Pasta", "Peach", "Pear", "Pineapple", "Potato", "Rice", 
-    "Spaghetti", "Sponge Gourd", "Strawberry", "Sugar Apple", "Tomato", "Tomato Puree", 
-    "Tuna", "Watermelon","Water", "Salt", "Black Pepper",
-    "Garlic Powder", "Onion Powder",
-    "Cumin", "Paprika",
-    "Cinnamon", "Turmeric",
-    "Vinegar", "Sugar",
-    "Soy Sauce", "Butter", "Olive Oil",
+    "Apple", "Banana", "Beef", "Bread", "Bream-Fish", "Butter", "Cabbage", 
+    "Capsicum", "Carrots", "Cauliflower", "Chicken", "Chillies", "Cooking Cream", 
+    "Corn", "Cucumber", "Egg", "Flour", "Garlic", "Ginger", "Kiwi", "Lemon", 
+    "Lentils", "Lettuce", "Milk", "Mozzarella", "Oil", "Onion", "Orange", 
+    "Pasta", "Pear", "Potato", "Rice", "Spaghetti", "Strawberry", "Tomato", 
+    "Tomato Puree", "Tuna"
 ]
+
+Pantry_extras = [ "Avocado",  "Bitter Melon",   
+    "Brinjal", "Calabash", "Cherry",  "Dragon Fruit", "Green Chili", "Guava", "Lady Finger", 
+    "Mango", "Oren", "Peach",  "Pineapple", "Sponge Gourd", "Sugar Apple", 
+    "Watermelon","Water", "Salt", "Black Pepper", "Garlic Powder", "Onion Powder",
+    "Cumin", "Paprika", "Cinnamon", "Turmeric", "Vinegar", "Sugar", "Soy Sauce", "Olive Oil",]
+
+#combine them 
+manual_mode_samples = sorted(ALL_CLASSES + Pantry_extras)
+
 
 # ── AUDIO LOGIC ──
 def play_recipe_audio(full_recipe_text):
@@ -144,7 +147,19 @@ with st.sidebar:
     
     st.divider()
     st.markdown("### 🧠 Model Settings")
-    model_path = st.text_input("Path to best.pt", value="model1_detector/best.pt", help="Path to your best.pt file")
+
+    import os
+
+    # 1. Find exactly where this streamlit_app.py file lives
+    current_dir = os.path.dirname(__file__)
+
+    # 2. Go up one folder (..), then into model1_detector, then grab best.pt
+    default_model_path = os.path.join(current_dir, "..", "model1_detector", "best.pt")
+
+    # 3. Use that dynamically built path in your app
+    model_path = st.text_input("Path to best.pt", value=default_model_path, help="Path to your best.pt file")
+
+    #model_path = st.text_input("Path to best.pt", value="model1_detector/best.pt", help="Path to your best.pt file")
     st.caption("AI Agent filters recipes based on these settings.")
 
 # ── TABS ──
@@ -176,7 +191,7 @@ with tab_scan:
 
     elif mode == "✏️ Manual":
         st.info("Select ingredients from the list. Useful for items the camera misses.")
-        manual_items = st.multiselect("Select what you have:", ALL_CLASSES)
+        manual_items = st.multiselect("Select what you have:", manual_mode_samples)
         qty = st.number_input("Quantity for each selected item", min_value=1, max_value=20, value=1)
         if st.button("➕ Add to Fridge", type="primary"):
             if manual_items:
