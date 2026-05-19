@@ -304,6 +304,49 @@ with tab_recipes:
                             os.makedirs(os.path.dirname(ratings_path), exist_ok=True)
                             with open(ratings_path, "w") as f: json.dump(ratings_data, f, indent=2)
                             st.success("Rating saved!")
+
+                        # ──────────────────────────────────────────────────────────────
+                        # 📺 YOUTUBE RECIPE VIDEO AUTOMATION 
+                        # ──────────────────────────────────────────────────────────────
+                        st.divider()
+                        st.subheader("📺 Step-by-Step Cooking Video")
+                        
+                        try:
+                            # Import fundamental Python standard libraries
+                            import urllib.request
+                            import re
+
+                            # Format search string by substituting spaces with '+' signs for URL encoding stability
+                            search_keyword = f"{rec['name']} cooking step by step recipe".replace(" ", "+")
+                            url = f"https://www.youtube.com/results?search_query={search_keyword}"
+                            
+                            # CRITICAL FIX: Emulate a modern web browser User-Agent header 
+                            # This bypasses HTTP 403 Forbidden blocks triggered by automated scripts
+                            req = urllib.request.Request(
+                                url, 
+                                headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
+                            )
+                            
+                            # Connect to the remote endpoint and load the raw search layout stream
+                            with urllib.request.urlopen(req) as response:
+                                html_response = response.read().decode()
+                            
+                            # Parse out specific 11-character alphanumeric YouTube Video IDs via Regular Expressions
+                            video_ids = re.findall(r"watch\?v=(\S{11})", html_response)
+                            
+                            if video_ids:
+                                # Construct the full playback target URL using the first match found
+                                recipe_video_url = f"https://www.youtube.com/watch?v={video_ids[0]}"
+                                
+                                st.caption(f"🎥 Found a perfect match on YouTube for: **{rec['name']}**")
+                                # Render the native Streamlit interactive video widget layer
+                                st.video(recipe_video_url)
+                            else:
+                                st.info("Could not find a cooking video matching this specific recipe title.")
+                                
+                        except Exception as video_error:
+                            st.error(f"Unable to load video assistant: {video_error}")
+                        # ──────────────────────────────────────────────────────────────
         else:
             st.warning("No matches found. Try relaxing dietary filters or adding more ingredients.")
     else:
