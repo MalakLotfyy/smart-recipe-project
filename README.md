@@ -1,126 +1,84 @@
 # 🍳 Smart Recipe Generator
 
-**Smart Recipe Generator** is a multimodal AI web application designed to eliminate food waste and answer the daily question: *"What can I make with what I have?"* Instead of manually typing out ingredients, users simply snap a photo of their fridge or groceries. The app utilizes a custom-trained object detection model to build a digital inventory, ranks recipes using a content-based recommendation engine, and dynamically invents brand-new recipes on the fly if your ingredients don't match the existing database.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![YOLOv8](https://img.shields.io/badge/YOLOv8-Ultralytics-yellow)](https://github.com/ultralytics/ultralytics)
+
+An intelligent, multimodal web application that helps you figure out what to cook based on the ingredients you already have. By combining a custom-trained computer vision model with an interactive recommendation engine, this app acts as your personal digital sous-chef.
+
+**[🌐 View the Live App Here](YOUR_STREAMLIT_URL_HERE)** *(Replace this with your actual Streamlit link!)*
 
 ---
 
-### 🧠 Core Architecture
+## ✨ Key Features
 
-This project utilizes a three-tier hybrid pipeline to balance speed, cost, and generative power:
-
-**1. Computer Vision (Model 1):** * A custom **YOLOv8** model fine-tuned on a merged dataset of 53 distinct ingredient classes.
-
-* Automatically detects, counts, and logs food items from user-uploaded images or live camera feeds directly into a persistent digital inventory (`inventory.json`).
-
-**2. Content-Based Recommendation Engine (Model 2 - Stage 1):** * A deterministic matchmaking system built with **Scikit-Learn**.
-
-* Uses `CountVectorizer` and **Cosine Similarity** to represent the user's fridge and the local recipe database as mathematical vectors.
-* It calculates the optimal matches and applies strict filters based on user preferences (e.g., maximum prep time, dietary restrictions, and allergy avoidance).
-
-**3. Generative AI Agent (Model 2 - Stage 2):** * An intelligent fallback system powered by the **Google GenAI SDK (Gemini 2.5 Flash)**.
-
-* If the recommendation engine detects that the best existing recipe match is below a 50% similarity threshold, the LLM is triggered. It autonomously invents a structured, JSON-formatted recipe using *only* the available ingredients and saves it to the database, allowing the system's knowledge to grow organically over time.
+* **📷 Multimodal Ingredient Scanning:** * **Live Camera:** Scan real-world ingredients instantly using your webcam or phone camera.
+  * **Image Upload:** Upload photos of your fridge or countertop.
+  * **Manual Entry:** Quickly add pantry staples using a comprehensive, searchable dropdown menu.
+* **🧠 Custom Object Detection (YOLOv8):** Powered by a custom-trained AI model (`best.pt`) capable of identifying 37 distinct classes of fruits, vegetables, and pantry items with high confidence.
+* **🧊 Digital Fridge Inventory:** A dynamic inventory system that automatically logs your scanned ingredients, updates quantities, and allows you to clear items as you use them.
+* **🍽️ Smart Recipe Engine:** Recommends recipes based strictly on your available inventory, with customizable filters for:
+  * Maximum Prep Time
+  * Dietary Restrictions (Vegetarian, Vegan, Halal)
+  * Allergen Avoidance
+* **📺 Interactive Cooking Guides:** * **Automated YouTube Integration:** Dynamically searches and embeds the perfect step-by-step cooking video for your chosen recipe.
+  * **Text-to-Speech (TTS):** Includes an audio player that reads the cooking methodology out loud so you can listen while you chop.
+  * **Nutritional Overview:** Provides a high-level breakdown of calories, protein, carbs, and fats.
 
 ---
 
-### ✨ Key Features
+## 🛠️ Technology Stack
 
-* **Multimodal Input:** Add ingredients via Live Camera, Image Upload, or Manual Entry.
-* **Smart Filtering:** Filter recommendations by max cooking time, vegetarian/vegan/halal diets, and specific allergens.
-* **Nutritional Breakdown:** Integrated with the Spoonacular API to provide calorie, protein, carb, and fat estimates per serving.
-* **Audio Cooking Guide:** Uses **gTTS (Google Text-to-Speech)** to read recipe instructions aloud for hands-free cooking.
-* **Modern UI:** A sleek, responsive dashboard built entirely in **Streamlit**.
-
----
-
-### 📊 Model Performance
-
-Our custom YOLOv8 object detection model achieved excellent results over 50 epochs, trained on 53 distinct ingredient classes:
-
-* **mAP50:** 97.8%
-* **Optimal Confidence Threshold:** 0.45
+| Component | Technology |
+| :--- | :--- |
+| **Frontend & UI** | Streamlit, Custom CSS (Adaptive Dark/Light Mode) |
+| **Computer Vision** | Ultralytics YOLOv8, OpenCV, Pillow |
+| **Backend Logic** | Python, Pandas, JSON data handling |
+| **Integrations** | gTTS (Google Text-to-Speech), `urllib` (YouTube web scraping) |
 
 ---
 
-### 📂 Project Structure
+## 🚀 How to Run Locally
 
-```text
-smart_recipe_project/
-├── model1_detector/
-│   ├── dataset.yaml          ← tells YOLO where your data is
-│   ├── train_yolo.py         ← trains Model 1
-│   ├── detect_ingredients.py ← runs detection on a photo
-│   └── update_inventory.py   ← saves detections to fridge inventory
-├── model2_recommender/
-│   ├── recipe_database.py    ← sample recipe database
-│   ├── recommender.py        ← content-based recommendation engine
-│   └── llm_agent.py          ← LLM agent that writes recipe + fetches nutrition
-├── app/
-│   └── streamlit_app.py      ← full UI connecting everything
-├── data/
-│   ├── fridge_inventory/
-│   │   └── inventory.json    ← auto-updated by Model 1
-│   └── my_dataset/           ← YOUR YOLO dataset goes here
-│       ├── images/
-│       │   ├── train/
-│       │   └── val/
-│       └── labels/
-│           ├── train/
-│           └── val/
-└── requirements.txt
+To run this project on your local machine, follow these steps:
 
-```
-
----
-
-### ⚙️ Setup & Installation
-
-1. **Install dependencies:**
+### 1. Clone the repository
 ```bash
+git clone [https://github.com/YOUR_GITHUB_USERNAME/smart_recipe_project.git](https://github.com/YOUR_GITHUB_USERNAME/smart_recipe_project.git)
+cd smart_recipe_project
+2. Install dependencies
+Ensure you have Python installed, then run:
+
+Bash
 pip install -r requirements.txt
+(Note: Make sure your requirements file includes streamlit, ultralytics, opencv-python, Pillow, gTTS, and pandas)
 
-```
+3. Verify the AI Model
+Ensure that the custom-trained weights file (best.pt) is located in the correct directory:
+model1_detector/best.pt
 
-
-2. **Environment Variables:**
-Create a `.env` file in the root directory and add your API keys:
-```env
-GEMINI_API_KEY=your_gemini_key_here
-SPOONACULAR_API_KEY=your_spoonacular_key_here
-
-```
-
-
-
----
-
-### 🚀 How to Run
-
-**Step 1 — Train Model 1 (Skip if using pretrained weights)**
-
-```bash
-python model1_detector/train_yolo.py
-
-```
-
-**Step 2 — Test detection on a photo locally**
-
-```bash
-python model1_detector/detect_ingredients.py --image path/to/photo.jpg
-
-```
-
-**Step 3 — Launch the full web application**
-
-```bash
+4. Launch the App
+Bash
 streamlit run app/streamlit_app.py
+The application will open automatically in your default web browser at http://localhost:8501.
+or from the cloud -> https://smart-recipe-project.streamlit.app/
 
-```
-
----
-
-### 🏷️ Dataset Tips
-
-* Download pre-labeled food datasets from [Roboflow Universe](https://universe.roboflow.com) (search "grocery items", "fridge ingredients").
-* For your own photos: use Roboflow or Label Studio to label them.
-* Always export your dataset in **YOLOv8 format**.
+📂 Project Structure
+Plaintext
+smart_recipe_project/
+├── app/
+│   └── streamlit_app.py         # Main Streamlit application and UI logic
+├── model1_detector/
+│   ├── best.pt                  # Custom YOLOv8 weights (37 classes)
+│   ├── detect_ingredients.py    # Inference script and bounding box logic
+│   └── update_inventory.py      # JSON state management for the fridge
+├── model2_recommender/
+│   ├── recommender.py           # Recipe matching and filtering algorithms
+│   ├── llm_agent.py             # Methodology and nutrition generation
+│   └── recipes.json             # Recipe database
+├── data/
+│   └── fridge_inventory/        # Stores dynamic user inventory and ratings
+├── .gitignore                   # Ignores heavy datasets and cached runs
+└── README.md
+🧠 Model Training Notes
+The object detection model was trained using Ultralytics YOLOv8 on a curated dataset of over 4,000 images, optimized down to 37 specific ingredient classes for high accuracy and minimal false positives. The dataset and training runs are excluded from this repository to maintain a lightweight, deployable codebase.
