@@ -69,24 +69,39 @@ or from the cloud -> https://smart-recipe-project.streamlit.app/
 ```
 ---
 
-📂 Project Structure
-```
-Plaintext
-smart_recipe_project/
+## 📂 Project Structure
+
+```text
+smart-recipe-project/
+├── .devcontainer/               # Dev container configuration for cloud environments
+│   └── devcontainer.json
 ├── app/
+│   ├── data/fridge_inventory/   # Local app data/ratings generated at runtime
+│   │   └── ratings.json
 │   └── streamlit_app.py         # Main Streamlit application and UI logic
+├── assets/                      # Model training graphs and evaluation metrics
+├── data/                        # Local raw datasets and processing scripts
+│   ├── merge_datasets.py        # Script used to combine multiple Kaggle datasets
+│   ├── fridge_inventory/        # Inventory state tracking
+│   └── [Various .yolov8 folders]# Raw image datasets (Ignored by Git)
 ├── model1_detector/
 │   ├── best.pt                  # Custom YOLOv8 weights (37 classes)
+│   ├── dataset.yaml             # YOLO training configuration
 │   ├── detect_ingredients.py    # Inference script and bounding box logic
+│   ├── train_yolo.py            # Local YOLO training script
 │   └── update_inventory.py      # JSON state management for the fridge
 ├── model2_recommender/
-│   ├── recommender.py           # Recipe matching and filtering algorithms
+│   ├── generator.py             # Additional recipe generation logic
 │   ├── llm_agent.py             # Methodology and nutrition generation
-│   └── recipes.json             # Recipe database
-├── data/
-│   └── fridge_inventory/        # Stores dynamic user inventory and ratings
+│   ├── recipe_database.py       # Database management for recipes
+│   ├── recipes.json             # Core recipe database
+│   └── recommender.py           # Recipe matching and filtering algorithms
+├── .env.example                 # Environment variables template
 ├── .gitignore                   # Ignores heavy datasets and cached runs
-└── README.md
+├── packages.txt                 # System-level dependencies for Streamlit Cloud
+├── requirements.txt             # Python library dependencies
+├── runtime.txt                  # Python version specification for deployment
+└── README.md                    # Project documentation
 ```
 
 ---
