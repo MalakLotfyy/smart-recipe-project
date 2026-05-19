@@ -15,12 +15,16 @@ An intelligent, multimodal web application that helps you figure out what to coo
 * **📷 Multimodal Ingredient Scanning:** * **Live Camera:** Scan real-world ingredients instantly using your webcam or phone camera.
   * **Image Upload:** Upload photos of your fridge or countertop.
   * **Manual Entry:** Quickly add pantry staples using a comprehensive, searchable dropdown menu.
+
 * **🧠 Custom Object Detection (YOLOv8):** Powered by a custom-trained AI model (`best.pt`) capable of identifying 37 distinct classes of fruits, vegetables, and pantry items with high confidence.
+
 * **🧊 Digital Fridge Inventory:** A dynamic inventory system that automatically logs your scanned ingredients, updates quantities, and allows you to clear items as you use them.
+
 * **🍽️ Smart Recipe Engine:** Recommends recipes based strictly on your available inventory, with customizable filters for:
   * Maximum Prep Time
   * Dietary Restrictions (Vegetarian, Vegan, Halal)
   * Allergen Avoidance
+
 * **📺 Interactive Cooking Guides:** * **Automated YouTube Integration:** Dynamically searches and embeds the perfect step-by-step cooking video for your chosen recipe.
   * **Text-to-Speech (TTS):** Includes an audio player that reads the cooking methodology out loud so you can listen while you chop.
   * **Nutritional Overview:** Provides a high-level breakdown of calories, protein, carbs, and fats.
@@ -62,6 +66,8 @@ Bash
 streamlit run app/streamlit_app.py
 The application will open automatically in your default web browser at http://localhost:8501.
 or from the cloud -> https://smart-recipe-project.streamlit.app/
+```
+---
 
 📂 Project Structure
 Plaintext
@@ -80,5 +86,7 @@ smart_recipe_project/
 │   └── fridge_inventory/        # Stores dynamic user inventory and ratings
 ├── .gitignore                   # Ignores heavy datasets and cached runs
 └── README.md
+
+---
 🧠 Model Training Notes
 The object detection model was trained using Ultralytics YOLOv8 on a curated dataset of over 4,000 images, optimized down to 37 specific ingredient classes for high accuracy and minimal false positives. The dataset and training runs are excluded from this repository to maintain a lightweight, deployable codebase.
