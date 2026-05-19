@@ -70,6 +70,7 @@ or from the cloud -> https://smart-recipe-project.streamlit.app/
 ---
 
 📂 Project Structure
+```
 Plaintext
 smart_recipe_project/
 ├── app/
@@ -86,6 +87,7 @@ smart_recipe_project/
 │   └── fridge_inventory/        # Stores dynamic user inventory and ratings
 ├── .gitignore                   # Ignores heavy datasets and cached runs
 └── README.md
+```
 
 ---
 🧠 Model Training Notes
