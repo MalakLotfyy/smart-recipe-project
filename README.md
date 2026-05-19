@@ -6,7 +6,7 @@
 
 An intelligent, multimodal web application that helps you figure out what to cook based on the ingredients you already have. By combining a custom-trained computer vision model with an interactive recommendation engine, this app acts as your personal digital sous-chef.
 
-**[🌐 View the Live App Here](YOUR_STREAMLIT_URL_HERE)** *(Replace this with your actual Streamlit link!)*
+**[🌐 View the Live App Here](https://smart-recipe-project.streamlit.app/))** 
 
 ---
 
