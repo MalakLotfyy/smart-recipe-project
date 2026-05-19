@@ -43,23 +43,40 @@ manual_mode_samples = sorted(ALL_CLASSES + Pantry_extras)
 # ── AUDIO LOGIC ──
 def play_recipe_audio(full_recipe_text):
     try:
-        if "Instructions" in full_recipe_text:
+        import re
+        
+        speech_content = full_recipe_text
+        
+        if "Step-by-Step Instructions" in full_recipe_text:
+            speech_content = full_recipe_text.split("Step-by-Step Instructions")[-1].strip()
+        elif "Instructions" in full_recipe_text:
             speech_content = full_recipe_text.split("Instructions")[-1].strip()
-        else:
-            speech_content = full_recipe_text
             
-        tts_engine = gTTS(text=speech_content, lang='en')
-        audio_stream = BytesIO()
-        tts_engine.write_to_fp(audio_stream)
-        audio_encoded = base64.b64encode(audio_stream.getvalue()).decode()
-        audio_component = f"""
-            <div style="margin: 10px 0;">
-                <audio controls autoplay style="width: 100%; border-radius: 10px;">
-                    <source src="data:audio/mp3;base64,{audio_encoded}" type="audio/mp3">
-                </audio>
-            </div>
-        """
-        st.markdown(audio_component, unsafe_allow_html=True)
+        if "Quick Tip" in speech_content:
+            speech_content = speech_content.split("Quick Tip")[0].strip()
+
+        speech_content = speech_content.replace("**", "").replace("*", "")
+        speech_content = speech_content.replace("#", "")
+        
+        speech_content = re.sub(r'[^a-zA-Z0-9\s.,:\-\n]', '', speech_content)
+        speech_content = speech_content.strip()
+
+        if speech_content:
+            tts_engine = gTTS(text=speech_content, lang='en')
+            audio_stream = BytesIO()
+            tts_engine.write_to_fp(audio_stream)
+            audio_encoded = base64.b64encode(audio_stream.getvalue()).decode()
+            audio_component = f"""
+                <div style="margin: 10px 0;">
+                    <audio controls autoplay style="width: 100%; border-radius: 10px;">
+                        <source src="data:audio/mp3;base64,{audio_encoded}" type="audio/mp3">
+                    </audio>
+                </div>
+            """
+            st.markdown(audio_component, unsafe_allow_html=True)
+        else:
+            st.warning("No clear instructions found to read aloud.")
+            
     except Exception as e:
         st.error(f"TTS Error: {e}")
 
