@@ -690,6 +690,95 @@
             "gluten"
         ],
         "id": 17
+    },
+    {
+        "name": "Simple Halal Beef Butter Pasta",
+        "cuisine": "Italian-American",
+        "ingredients": [
+            "beef",
+            "pasta",
+            "butter",
+            "olive oil",
+            "salt",
+            "black pepper",
+            "water"
+        ],
+        "required": [
+            "beef",
+            "pasta",
+            "butter"
+        ],
+        "tags": [
+            "halal",
+            "dinner",
+            "quick",
+            "beef",
+            "pasta"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 30,
+        "description": "A quick and satisfying pasta dish featuring savory halal beef browned and tossed with buttered pasta, seasoned simply with salt and black pepper. Perfect for a weeknight meal with minimal ingredients.",
+        "steps": [
+            "Bring a large pot of salted water to a boil. Add the pasta and cook according to package directions until al dente, about 8-12 minutes. Reserve about 1/2 cup of the starchy pasta water before draining.",
+            "While the pasta is cooking, heat a large skillet or pan over medium-high heat. Add a tablespoon of olive oil. Add the halal beef and cook, breaking it up with a spoon, until browned and cooked through, about 7-10 minutes. Drain any excess fat.",
+            "Season the cooked beef generously with salt and black pepper to taste.",
+            "Add the drained pasta to the skillet with the beef. Add the butter and 2-3 tablespoons of the reserved pasta water. Toss everything together vigorously until the butter is melted and coats the pasta and beef, creating a light, emulsified sauce. Add more pasta water if needed to achieve your desired consistency.",
+            "Serve immediately and enjoy."
+        ],
+        "allergens": [
+            "beef",
+            "milk",
+            "wheat"
+        ],
+        "id": 18
+    },
+    {
+        "name": "Fruit Pancakes",
+        "cuisine": "American",
+        "ingredients": [
+            "flour",
+            "milk",
+            "egg",
+            "sugar",
+            "salt",
+            "butter",
+            "banana",
+            "strawberry",
+            "apple",
+            "cinnamon",
+            "water"
+        ],
+        "required": [
+            "flour",
+            "milk",
+            "egg",
+            "sugar",
+            "salt"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "breakfast",
+            "quick",
+            "dessert"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 30,
+        "description": "Fluffy, golden pancakes made from simple ingredients, lightly spiced with cinnamon and served with a fresh medley of sliced fruits.",
+        "instructions": [
+            "In a large bowl, whisk together the flour, sugar, salt, and cinnamon.",
+            "In a separate medium bowl, whisk the egg and milk until well combined.",
+            "Pour the wet ingredients into the dry ingredients. Mix gently until just combined. A few lumps are okay; do not overmix.",
+            "Heat a lightly buttered pan or griddle over medium heat. If using oil, lightly coat the pan.",
+            "Pour about 1/4 cup of batter per pancake onto the hot surface. Cook for 2-3 minutes per side, or until golden brown and cooked through.",
+            "While the pancakes are cooking, wash and slice the banana, strawberry, and apple.",
+            "Serve the warm pancakes immediately, topped with the fresh sliced fruits."
+        ],
+        "allergens": [
+            "milk",
+            "egg",
+            "gluten"
+        ],
+        "id": 19
     }
-    
 ]

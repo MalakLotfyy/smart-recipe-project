@@ -1,50 +1,92 @@
 {
-  "beef": {
-    "name": "beef",
+  "apple": {
+    "name": "apple",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-18 23:41"
+    "last_seen": "2026-05-20 15:49"
   },
-  "black pepper": {
-    "name": "black pepper",
+  "banana": {
+    "name": "banana",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-18 23:41"
+    "last_seen": "2026-05-20 15:49"
   },
-  "cooking cream": {
-    "name": "cooking cream",
+  "butter": {
+    "name": "butter",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-18 23:41"
+    "last_seen": "2026-05-20 15:49"
+  },
+  "cinnamon": {
+    "name": "cinnamon",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
   },
   "egg": {
     "name": "egg",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-18 23:41"
+    "last_seen": "2026-05-20 15:49"
+  },
+  "flour": {
+    "name": "flour",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
+  },
+  "mango": {
+    "name": "mango",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
+  },
+  "milk": {
+    "name": "milk",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
+  },
+  "oil": {
+    "name": "oil",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
+  },
+  "orange": {
+    "name": "orange",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
+  },
+  "peach": {
+    "name": "peach",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
   },
   "salt": {
     "name": "salt",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-18 23:41"
+    "last_seen": "2026-05-20 15:49"
+  },
+  "strawberry": {
+    "name": "strawberry",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
+  },
+  "sugar": {
+    "name": "sugar",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 15:49"
   },
   "water": {
     "name": "water",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-18 23:41"
-  },
-  "Potato": {
-    "name": "Potato",
-    "count": 1,
-    "confidence": 0.86,
-    "last_seen": "2026-05-19 00:42"
-  },
-  "Pear": {
-    "name": "Pear",
-    "count": 1,
-    "confidence": 0.73,
-    "last_seen": "2026-05-19 00:42"
+    "last_seen": "2026-05-20 15:49"
   }
 }

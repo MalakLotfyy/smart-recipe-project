@@ -11,13 +11,14 @@ from recipe_database import save_new_recipe
 
 load_dotenv()
 
-# FIX: Explicitly load your specific GEMINI_API_KEY from .env
+# Explicitly load GEMINI_API_KEY from .env
 api_key = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key)
 
 # Define the EXACT structure of your database dictionaries
 class RecipeSchema(BaseModel):
-    name: str
+    # Strictly limiting the words to 1-2 words only for a ultra-clean searchable name
+    name: str = Field(description="The absolute shortest, most common name for the dish. Maximum 2 words. Examples: 'Milk Pasta', 'Tomato Soup', 'Fried Rice'. No adjectives like 'simple', 'creamy', 'delicious', or 'quick'.") 
     cuisine: str
     ingredients: list[str] = Field(description="List of all ingredients used in lowercase")
     required: list[str] = Field(description="The core ingredients required from the available list")
@@ -25,20 +26,31 @@ class RecipeSchema(BaseModel):
     difficulty: str = Field(description="easy, medium, or hard")
     time_minutes: int
     description: str
-    steps: list[str]
+    # Fixed field name for cooking steps
+    instructions: list[str] = Field(description="The step-by-step cooking instructions") 
     allergens: list[str]
 
 def generate_missing_recipe(available_ingredients: list[str], preferences: dict) -> dict | None:
     """Calls Gemini to invent a recipe based on fridge contents and saves it."""
     print("\n[API] Generating a brand new recipe to match your fridge...")
     
+    # Reinforced prompt with strict rules against descriptive/marketing names
     prompt = f"""
     You are an expert culinary AI. The user's fridge only has these ingredients: {available_ingredients}
     User Preferences: {preferences}
     
     Invent a delicious, realistic recipe that primarily uses these available ingredients. 
     It is okay to add a few common pantry staples (like salt, pepper, oil, water) if absolutely necessary.
-    Ensure all fields are filled out realistically.
+    
+    CRITICAL RULES FOR THE OUTPUT NAME:
+    1. The 'name' MUST be a super short, direct, and common 1 or 2-word name. 
+    2. NEVER use adjectives or marketing buzzwords in the name (DO NOT use: Simple, Creamy, Easy, Quick, Delicious, Homemade, Best, etc.).
+    3. Bad Name Example: 'Simple Creamy Milk Pasta' 
+    4. Good Name Example: 'Milk Pasta' or 'White Pasta'
+    5. The name must be easily searchable and represent the core recipe instantly.
+    
+    CRITICAL RULES FOR THE INSTRUCTIONS:
+    1. Provide the cooking steps inside the 'instructions' field strictly.
     """
     
     try:
@@ -48,14 +60,15 @@ def generate_missing_recipe(available_ingredients: list[str], preferences: dict)
             config={
                 'response_mime_type': 'application/json',
                 'response_schema': RecipeSchema,
-                'temperature': 0.7
+                # Kept temperature at 0.5 to keep the AI focused and compliant
+                'temperature': 0.5 
             },
         )
         
         # Parse AI response into a Python dictionary
         new_recipe_data = json.loads(response.text)
         
-        # Save it to our JSON database!
+        # Save it to our JSON database
         saved_recipe = save_new_recipe(new_recipe_data)
         print(f"[API SUCCESS] Invented and saved: {saved_recipe['name']}!")
         return saved_recipe
