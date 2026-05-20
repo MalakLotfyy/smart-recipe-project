@@ -65,7 +65,10 @@ def _format_recipe_without_llm(recipe: dict, available_ingredients: list[str]) -
         f"\n**Cuisine:** {recipe['cuisine']} | **Time:** {recipe['time_minutes']} min | **Difficulty:** {recipe['difficulty']}",
         "\n## Instructions",
     ]
-    for i, step in enumerate(recipe["steps"], 1):
+    # Checks for 'steps', falls back to 'instructions', or defaults to an empty list
+    steps_list = recipe.get("steps") or recipe.get("instructions") or recipe.get("steps_instructions") or []
+
+    for i, step in enumerate(steps_list, 1):
         lines.append(f"{i}. {step}")
     if missing:
         lines.append(f"\n💡 **You're missing:** {', '.join(missing)} — but you can try without them or substitute!")
