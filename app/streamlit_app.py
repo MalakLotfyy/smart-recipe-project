@@ -50,7 +50,10 @@ def play_recipe_audio(full_recipe_text):
         
         speech_content = full_recipe_text
         
+<<<<<<< HEAD
         # Isolate step-by-step text if present
+=======
+>>>>>>> 6e5f5c5a60f74745ef7d77c6fa6a17bfce316817
         if "Step-by-Step Instructions" in full_recipe_text:
             speech_content = full_recipe_text.split("Step-by-Step Instructions")[-1].strip()
         elif "Instructions" in full_recipe_text:
@@ -59,6 +62,7 @@ def play_recipe_audio(full_recipe_text):
         if "Quick Tip" in speech_content:
             speech_content = speech_content.split("Quick Tip")[0].strip()
 
+<<<<<<< HEAD
         # STOPS SPELLING OUT DASHES OR LINE SYMBOLS:
         # Replaces dashes/lines with natural spaces, then strips out ALL remaining symbols
         speech_content = speech_content.replace("-", " ").replace("_", " ")
@@ -66,6 +70,13 @@ def play_recipe_audio(full_recipe_text):
         
         # Clean double spaces caused by token stripping
         speech_content = " ".join(speech_content.split()).strip()
+=======
+        speech_content = speech_content.replace("**", "").replace("*", "")
+        speech_content = speech_content.replace("#", "")
+        
+        speech_content = re.sub(r'[^a-zA-Z0-9\s.,:\-\n]', '', speech_content)
+        speech_content = speech_content.strip()
+>>>>>>> 6e5f5c5a60f74745ef7d77c6fa6a17bfce316817
 
         if speech_content:
             tts_engine = gTTS(text=speech_content, lang='en')
