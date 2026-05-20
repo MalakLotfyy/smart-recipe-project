@@ -41,28 +41,54 @@ manual_mode_samples = sorted(ALL_CLASSES + Pantry_extras)
 
 
 # ── AUDIO LOGIC ──
+# ==========================================
+# ─ BEGIN AUDIO LOGIC ──
+# ==========================================
 def play_recipe_audio(full_recipe_text):
     try:
-        if "Instructions" in full_recipe_text:
+        import re
+        
+        speech_content = full_recipe_text
+        
+        # Isolate step-by-step text if present
+        if "Step-by-Step Instructions" in full_recipe_text:
+            speech_content = full_recipe_text.split("Step-by-Step Instructions")[-1].strip()
+        elif "Instructions" in full_recipe_text:
             speech_content = full_recipe_text.split("Instructions")[-1].strip()
-        else:
-            speech_content = full_recipe_text
             
-        tts_engine = gTTS(text=speech_content, lang='en')
-        audio_stream = BytesIO()
-        tts_engine.write_to_fp(audio_stream)
-        audio_encoded = base64.b64encode(audio_stream.getvalue()).decode()
-        audio_component = f"""
-            <div style="margin: 10px 0;">
-                <audio controls autoplay style="width: 100%; border-radius: 10px;">
-                    <source src="data:audio/mp3;base64,{audio_encoded}" type="audio/mp3">
-                </audio>
-            </div>
-        """
-        st.markdown(audio_component, unsafe_allow_html=True)
+        if "Quick Tip" in speech_content:
+            speech_content = speech_content.split("Quick Tip")[0].strip()
+
+        # STOPS SPELLING OUT DASHES OR LINE SYMBOLS:
+        # Replaces dashes/lines with natural spaces, then strips out ALL remaining symbols
+        speech_content = speech_content.replace("-", " ").replace("_", " ")
+        speech_content = re.sub(r'[^a-zA-Z0-9\s.,!?]', '', speech_content)
+        
+        # Clean double spaces caused by token stripping
+        speech_content = " ".join(speech_content.split()).strip()
+
+        if speech_content:
+            tts_engine = gTTS(text=speech_content, lang='en')
+            audio_stream = BytesIO()
+            tts_engine.write_to_fp(audio_stream)
+            audio_encoded = base64.b64encode(audio_stream.getvalue()).decode()
+            audio_component = f"""
+                <div style="margin: 10px 0;">
+                    <audio controls autoplay style="width: 100%; border-radius: 10px;">
+                        <source src="data:audio/mp3;base64,{audio_encoded}" type="audio/mp3">
+                    </audio>
+                </div>
+            """
+            st.markdown(audio_component, unsafe_allow_html=True)
+        else:
+            st.warning("No clear instructions found to read aloud.")
+            
     except Exception as e:
         st.error(f"TTS Error: {e}")
+# ==========================================
+# ── END AUDIO LOGIC ───────────────────────
 
+# ==========================================
 # ── ADAPTIVE CSS INJECTION (Supports Dark & Light Mode) ──
 def apply_custom_style():
     st.markdown("""
@@ -308,44 +334,46 @@ with tab_recipes:
                         # ──────────────────────────────────────────────────────────────
                         # 📺 YOUTUBE RECIPE VIDEO AUTOMATION 
                         # ──────────────────────────────────────────────────────────────
+                        # ==============================================================
+                        # ── BEGIN YOUTUBE RECIPE VIDEO AUTOMATION (EXACT MATCHING) ──
+                        # ==============================================================
                         st.divider()
                         st.subheader("📺 Step-by-Step Cooking Video")
                         
                         try:
-                            # Import fundamental Python standard libraries
                             import urllib.request
                             import re
 
-                            # Format search string by substituting spaces with '+' signs for URL encoding stability
-                            search_keyword = f"{rec['name']} cooking step by step recipe".replace(" ", "+")
+                            # Takes the exact full recipe name with NO modifications, drops bad symbols
+                            clean_recipe_name = rec['name'].strip()
+                            search_keyword = f"{clean_recipe_name} recipe step by step cooking".replace(" ", "+")
                             url = f"https://www.youtube.com/results?search_query={search_keyword}"
                             
-                            # CRITICAL FIX: Emulate a modern web browser User-Agent header 
-                            # This bypasses HTTP 403 Forbidden blocks triggered by automated scripts
                             req = urllib.request.Request(
                                 url, 
                                 headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'}
                             )
                             
-                            # Connect to the remote endpoint and load the raw search layout stream
                             with urllib.request.urlopen(req) as response:
                                 html_response = response.read().decode()
                             
-                            # Parse out specific 11-character alphanumeric YouTube Video IDs via Regular Expressions
-                            video_ids = re.findall(r"watch\?v=(\S{11})", html_response)
+                            # Advanced regex lookup to find exact video IDs reliably
+                            video_ids = re.findall(r"\"videoId\":\"([^\"]{11})\"", html_response)
+                            if not video_ids:
+                                video_ids = re.findall(r"watch\?v=(\S{11})", html_response)
                             
                             if video_ids:
-                                # Construct the full playback target URL using the first match found
                                 recipe_video_url = f"https://www.youtube.com/watch?v={video_ids[0]}"
-                                
-                                st.caption(f"🎥 Found a perfect match on YouTube for: **{rec['name']}**")
-                                # Render the native Streamlit interactive video widget layer
+                                st.caption(f"🎥 Best video instructions found for: **{clean_recipe_name}**")
                                 st.video(recipe_video_url)
                             else:
                                 st.info("Could not find a cooking video matching this specific recipe title.")
                                 
                         except Exception as video_error:
                             st.error(f"Unable to load video assistant: {video_error}")
+                        # ==============================================================
+                        # ── END YOUTUBE RECIPE VIDEO AUTOMATION ───────────────────────
+                        # ==============================================================
                         # ──────────────────────────────────────────────────────────────
         else:
             st.warning("No matches found. Try relaxing dietary filters or adding more ingredients.")
