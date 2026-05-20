@@ -1,23 +1,26 @@
 # ──────────────────────────────────────────────────────────────
 # generator.py
-# Uses Gemini Structured Outputs to generate JSON-compatible recipes
+# Purpose: Uses Groq's API to dynamically generate new recipes 
+# when the local database doesn't have a good match.
 # ──────────────────────────────────────────────────────────────
 import json
 import os
-from google import genai
+import streamlit as st
+from groq import Groq
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 from recipe_database import save_new_recipe
 
+# Load local environment variables (for testing outside of Streamlit Cloud)
 load_dotenv()
 
-# Explicitly load GEMINI_API_KEY from .env
-api_key = os.getenv("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key)
-
-# Define the EXACT structure of your database dictionaries
+# ────────────────────────────────────────
+# SCHEMA DEFINITION
+# We use Pydantic to define an exact blueprint for the data. 
+# This is a crucial safety measure to ensure the LLM doesn't hallucinate 
+# random keys that would crash our frontend UI.
+# ────────────────────────────────────────
 class RecipeSchema(BaseModel):
-    # Strictly limiting the words to 1-2 words only for a ultra-clean searchable name
     name: str = Field(description="The absolute shortest, most common name for the dish. Maximum 2 words. Examples: 'Milk Pasta', 'Tomato Soup', 'Fried Rice'. No adjectives like 'simple', 'creamy', 'delicious', or 'quick'.") 
     cuisine: str
     ingredients: list[str] = Field(description="List of all ingredients used in lowercase")
@@ -26,15 +29,32 @@ class RecipeSchema(BaseModel):
     difficulty: str = Field(description="easy, medium, or hard")
     time_minutes: int
     description: str
-    # Fixed field name for cooking steps
     instructions: list[str] = Field(description="The step-by-step cooking instructions") 
     allergens: list[str]
 
+
 def generate_missing_recipe(available_ingredients: list[str], preferences: dict) -> dict | None:
-    """Calls Gemini to invent a recipe based on fridge contents and saves it."""
+    """
+    Calls the Groq API to invent a recipe based on fridge contents, 
+    forces it into a strict JSON format, and saves it to the database.
+    """
     print("\n[API] Generating a brand new recipe to match your fridge...")
     
-    # Reinforced prompt with strict rules against descriptive/marketing names
+    # 1. SAFELY FETCH API KEY: Tries Streamlit Secrets first (Cloud), falls back to .env (Local)
+    try:
+        api_key = st.secrets["GROQ_API_KEY"]
+    except Exception:
+        api_key = os.getenv("GROQ_API_KEY")
+        
+    if not api_key:
+        print("[API ERROR] No Groq API key found locally or in secrets.")
+        return None
+
+    # Initialize the Groq client
+    client = Groq(api_key=api_key)
+    
+    # 2. PROMPT ENGINEERING: Strict instructions to prevent marketing buzzwords 
+    # and force the model to respect dietary/ingredient limitations.
     prompt = f"""
     You are an expert culinary AI. The user's fridge only has these ingredients: {available_ingredients}
     User Preferences: {preferences}
@@ -51,25 +71,25 @@ def generate_missing_recipe(available_ingredients: list[str], preferences: dict)
     
     CRITICAL RULES FOR THE INSTRUCTIONS:
     1. Provide the cooking steps inside the 'instructions' field strictly.
+    
+    OUTPUT FORMAT:
+    You must return ONLY a valid JSON object. Do not wrap it in markdown. 
+    The JSON keys must match: name, cuisine, ingredients, required, tags, difficulty, time_minutes, description, instructions, allergens.
     """
     
     try:
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config={
-                'response_mime_type': 'application/json',
-                'response_schema': RecipeSchema,
-                # Kept temperature at 0.5 to keep the AI focused and compliant
-                'temperature': 0.5 
-            },
+        # 3. EXECUTE API CALL: We explicitly tell Groq to return a JSON object
+        response = client.chat.completions.create(
+            model='llama-3.3-70b-versatile',
+            messages=[{"role": "user", "content": prompt}],
+            response_format={"type": "json_object"},
+            temperature=0.5 # Kept at 0.5 for a balance of creativity and structural obedience
         )
         
-        # Parse AI response into a Python dictionary
-        new_recipe_data = json.loads(response.text)
-        
-        # Save it to our JSON database
+        # 4. PARSE & SAVE: Convert the text response into a Python dictionary
+        new_recipe_data = json.loads(response.choices[0].message.content)
         saved_recipe = save_new_recipe(new_recipe_data)
+        
         print(f"[API SUCCESS] Invented and saved: {saved_recipe['name']}!")
         return saved_recipe
         

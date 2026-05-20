@@ -1,92 +1,68 @@
 {
-  "apple": {
-    "name": "apple",
+  "beef": {
+    "name": "beef",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
+    "last_seen": "2026-05-20 18:45"
   },
-  "banana": {
-    "name": "banana",
+  "black pepper": {
+    "name": "black pepper",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
+    "last_seen": "2026-05-20 18:45"
+  },
+  "bread": {
+    "name": "bread",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 18:45"
+  },
+  "brinjal": {
+    "name": "brinjal",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 18:45"
   },
   "butter": {
     "name": "butter",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
+    "last_seen": "2026-05-20 18:45"
   },
-  "cinnamon": {
-    "name": "cinnamon",
+  "cabbage": {
+    "name": "cabbage",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
+    "last_seen": "2026-05-20 18:45"
+  },
+  "carrots": {
+    "name": "carrots",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 18:45"
+  },
+  "chillies": {
+    "name": "chillies",
+    "count": 1,
+    "confidence": 1.0,
+    "last_seen": "2026-05-20 18:45"
   },
   "egg": {
     "name": "egg",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
-  },
-  "flour": {
-    "name": "flour",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
-  },
-  "mango": {
-    "name": "mango",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
-  },
-  "milk": {
-    "name": "milk",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
+    "last_seen": "2026-05-20 18:45"
   },
   "oil": {
     "name": "oil",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
-  },
-  "orange": {
-    "name": "orange",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
-  },
-  "peach": {
-    "name": "peach",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
+    "last_seen": "2026-05-20 18:45"
   },
   "salt": {
     "name": "salt",
     "count": 1,
     "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
-  },
-  "strawberry": {
-    "name": "strawberry",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
-  },
-  "sugar": {
-    "name": "sugar",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
-  },
-  "water": {
-    "name": "water",
-    "count": 1,
-    "confidence": 1.0,
-    "last_seen": "2026-05-20 15:49"
+    "last_seen": "2026-05-20 18:45"
   }
 }

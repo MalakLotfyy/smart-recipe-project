@@ -780,5 +780,190 @@
             "gluten"
         ],
         "id": 19
+    },
+    {
+        "name": "Apple Pancakes",
+        "cuisine": "American",
+        "ingredients": [
+            "apple",
+            "butter",
+            "cinnamon",
+            "egg",
+            "flour",
+            "milk",
+            "oil",
+            "sugar",
+            "baking powder",
+            "salt"
+        ],
+        "required": [
+            "apple",
+            "butter",
+            "cinnamon",
+            "egg",
+            "flour",
+            "milk",
+            "oil"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "breakfast",
+            "quick",
+            "dessert"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 35,
+        "description": "Fluffy pancakes studded with tender apple pieces and infused with warm cinnamon, perfect for a comforting breakfast or a sweet treat.",
+        "instructions": [
+            "In a large bowl, whisk together 1.5 cups all-purpose flour, 2 tablespoons sugar, 2 teaspoons baking powder, 0.5 teaspoon cinnamon, and 0.25 teaspoon salt.",
+            "In a separate medium bowl, whisk together 1 large egg, 1 cup milk, and 2 tablespoons melted butter (or oil).",
+            "Pour the wet ingredients into the dry ingredients and mix until just combined. Do not overmix; a few lumps are fine.",
+            "Peel, core, and finely dice 1 medium apple. Gently fold the diced apple into the pancake batter.",
+            "Heat a lightly oiled griddle or large non-stick pan over medium heat.",
+            "Pour about 0.25 cup of batter per pancake onto the hot griddle, leaving some space between them.",
+            "Cook for 2-3 minutes per side, or until golden brown and bubbles form on the surface, then flip and cook the other side until golden.",
+            "Serve the apple pancakes warm."
+        ],
+        "allergens": [
+            "egg",
+            "milk",
+            "gluten"
+        ],
+        "id": 20
+    },
+    {
+        "name": "Apple Pancakes",
+        "cuisine": "American",
+        "ingredients": [
+            "apple",
+            "flour",
+            "egg",
+            "milk",
+            "sugar",
+            "cinnamon",
+            "oil",
+            "baking powder",
+            "salt"
+        ],
+        "required": [
+            "apple",
+            "cinnamon",
+            "flour",
+            "egg",
+            "milk",
+            "oil",
+            "sugar"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "breakfast",
+            "quick"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 25,
+        "description": "Fluffy pancakes studded with diced apples and a hint of cinnamon, perfect for a quick breakfast or dessert.",
+        "instructions": [
+            "Peel, core, and finely dice the apple.",
+            "In a large bowl, whisk together the flour, sugar, baking powder, cinnamon, and salt.",
+            "In a separate bowl, whisk the egg and milk.",
+            "Pour the wet ingredients into the dry ingredients and mix until just combined. Gently fold in the diced apple.",
+            "Heat a lightly oiled non-stick pan or griddle over medium heat.",
+            "Pour about 1/4 cup of batter per pancake onto the hot pan.",
+            "Cook for 2-3 minutes per side, or until golden brown and cooked through.",
+            "Serve warm."
+        ],
+        "allergens": [
+            "egg",
+            "milk",
+            "gluten"
+        ],
+        "id": 21
+    },
+    {
+        "name": "Apple Pancakes",
+        "cuisine": "American",
+        "ingredients": [
+            "apple",
+            "cinnamon",
+            "flour",
+            "milk",
+            "sugar",
+            "oil",
+            "salt"
+        ],
+        "required": [
+            "apple",
+            "flour",
+            "milk",
+            "sugar"
+        ],
+        "tags": [
+            "vegetarian",
+            "halal",
+            "breakfast",
+            "quick",
+            "dessert"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 30,
+        "description": "Fluffy pancakes infused with grated apple and a hint of cinnamon, perfect for a quick breakfast or dessert.",
+        "instructions": [
+            "Grate the apple and set aside.",
+            "In a large bowl, whisk together the flour, sugar, cinnamon, and a pinch of salt.",
+            "Gradually add the milk and 1 tablespoon of oil to the dry ingredients, mixing until just combined. Do not overmix; a few lumps are fine.",
+            "Gently fold in the grated apple.",
+            "Heat a lightly oiled non-stick pan or griddle over medium heat.",
+            "Pour about 1/4 cup of batter per pancake onto the hot pan.",
+            "Cook for 2-3 minutes per side, until golden brown and cooked through.",
+            "Serve warm."
+        ],
+        "allergens": [
+            "milk",
+            "wheat"
+        ],
+        "id": 22
+    },
+    {
+        "name": "Chili Beef",
+        "cuisine": "Contemporary",
+        "ingredients": [
+            "beef",
+            "butter",
+            "chillies",
+            "black pepper",
+            "lettuce",
+            "salt",
+            "cooking oil"
+        ],
+        "required": [
+            "beef",
+            "butter",
+            "chillies",
+            "black pepper",
+            "lettuce"
+        ],
+        "tags": [
+            "halal",
+            "dinner",
+            "quick",
+            "low carb"
+        ],
+        "difficulty": "easy",
+        "time_minutes": 15,
+        "description": "Quick pan-fried beef strips seasoned with chili butter, served in fresh lettuce leaves for a light and flavorful meal.",
+        "instructions": [
+            "Slice beef into thin strips. Season with salt and black pepper.",
+            "Heat a pan with a little cooking oil over medium-high heat.",
+            "Add beef strips and cook until browned and cooked through, about 3-5 minutes. Remove beef from the pan and set aside.",
+            "In the same pan, melt butter. Add sliced chillies and saut\u00e9 for 1-2 minutes until fragrant.",
+            "Return the cooked beef to the pan, toss with the chili butter.",
+            "Serve immediately with fresh lettuce leaves for wrapping."
+        ],
+        "allergens": [
+            "milk"
+        ],
+        "id": 23
     }
 ]
