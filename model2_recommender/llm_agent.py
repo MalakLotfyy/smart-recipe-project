@@ -65,11 +65,17 @@ def _format_recipe_without_llm(recipe: dict, available_ingredients: list[str]) -
         f"\n**Cuisine:** {recipe['cuisine']} | **Time:** {recipe['time_minutes']} min | **Difficulty:** {recipe['difficulty']}",
         "\n## Instructions",
     ]
-    # Checks for 'steps', falls back to 'instructions', or defaults to an empty list
+    
+    # DYNAMIC KEY RECOVERY: Safely checks both 'steps' (old JSON) and 'instructions' (Gemini JSON)
     steps_list = recipe.get("steps") or recipe.get("instructions") or recipe.get("steps_instructions") or []
+
+    # If steps_list is a raw string instead of a list, wrap it in a list so it doesn't break
+    if isinstance(steps_list, str):
+        steps_list = [steps_list]
 
     for i, step in enumerate(steps_list, 1):
         lines.append(f"{i}. {step}")
+        
     if missing:
         lines.append(f"\n💡 **You're missing:** {', '.join(missing)} — but you can try without them or substitute!")
     return "\n".join(lines)
